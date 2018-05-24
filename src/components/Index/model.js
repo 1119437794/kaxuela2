@@ -1,9 +1,10 @@
-import { Header } from '../common'
+import { Header, Login } from '../common'
 
 export default {
   name: 'Index',
   components: {
-    Header
+    Header,
+    Login
   },
   data () {
     return {

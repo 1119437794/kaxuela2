@@ -6,6 +6,6 @@ export { default } from './model'
 </script>
 <template>
   <div class="root">
-    <Header />
+    <Login />
   </div>
 </template>

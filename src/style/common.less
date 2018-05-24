@@ -1,1 +1,156 @@
-@main-width: 1200px
+@main-width: 1200px;
+@main-colot: #9EB3CE;
+.btn {
+  font-size: 16px;
+  line-height: 44px;
+  display: inline-block;
+  height: 44px;
+  padding: 0 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  outline: 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: .05s linear;
+  -o-transition: .05s linear;
+  transition: .05s linear;
+
+  &:hover, &.btn_active{
+    text-decoration: none;
+    color: @main-colot;
+    background-color: #fff;
+  }
+
+  &.btn_link{
+    color: #fff;
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  &.btn_outline{
+    color: #fff;
+    background-color: transparent;
+  }
+
+  &.btn_disabled {
+  color: #fff;
+  border-color: #b2b2b2;
+  background-color: #b2b2b2;
+
+  &:hover{
+    cursor: default;
+    color: #fff;
+    border-color: #b2b2b2;
+    background-color: #b2b2b2;
+    &.btn_outline{
+      color: #b2b2b2;
+      background-color: transparent;
+    }
+  }
+}
+}
+
+
+.btn_sm {
+  font-size: 14px;
+  line-height: 36px;
+  height: 36px
+}
+
+.btn_lg {
+  font-size: 18px;
+  line-height: 46px;
+  height: 46px
+}
+
+.btn_block {
+  display: block;
+  width: 100%
+}
+
+.btn+.btn {
+  margin-top: 23px
+}
+
+.btn_green {
+  color: @main-colot;
+  border-color: @main-colot;
+  background-color: #fff;
+
+  &:hover, &.btn_active{
+    color: #fff;
+    border-color: @main-colot;
+    background-color: @main-colot
+  }
+
+  &.btn_link{
+    color: @main-colot;
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  &.btn_outline{
+    color: @main-colot;
+    background-color: transparent;
+  }
+}
+
+.btn_red {
+  color: #fd5f39;
+  border-color: #fd5f39;
+  background-color: #fff;
+
+  &:hover, &.btn_active{
+    color: #fff;
+    background-color: #fd5f39
+  }
+
+  &.btn_link{
+    color: #fd5f39;
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  &.btn_outline{
+    color: #fd5f39;
+    background-color: transparent;
+  }
+}
+
+.btn_icon {
+  padding-left: 35px;
+  padding-right: 20px;
+  color: @main-colot;
+  border-color: @main-colot;
+  background-color: #fff;
+  overflow: hidden;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none
+}
+
+.btn_icon .icon {
+  display: inline-block;
+  height: 19px;
+  width: 21px;
+  vertical-align: middle;
+  //background-image: url(../img/icon-download.png);
+  background-position: -21px top;
+  background-repeat: no-repeat;
+  padding-right: 5px;
+
+  &.hover{
+    color: #fff;
+    border-color: @main-colot;
+    background-color: @main-colot;
+
+    .icon {
+      background-position: 0 0
+    }
+  }
+}
+
+
