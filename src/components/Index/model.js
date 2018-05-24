@@ -1,7 +1,7 @@
 import { Header } from '../common'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Index',
   components: {
     Header
   },
