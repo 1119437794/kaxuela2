@@ -7,5 +7,7 @@ export { default } from './model'
 <template>
   <div class="root">
     <Header />
+    <FriendLink />
+    <Footer />
   </div>
 </template>

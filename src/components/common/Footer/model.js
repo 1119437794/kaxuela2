@@ -1,8 +1,5 @@
 export default {
-  name: 'Index',
-  components: {
-    ...require('../common')
-  },
+  name: 'Footer',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
