@@ -1,11 +1,16 @@
+import NavItem from './NavItem'
+import VideoItem from './VideoItem'
+
 export default {
   name: 'Index',
   components: {
-    ...require('../common')
+    ...require('../common'),
+    NavItem,
+    VideoItem
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      navs: [1, 1, 1, 2]
     }
   }
 }

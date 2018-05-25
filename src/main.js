@@ -18,3 +18,8 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+window.onerror = function (err) {
+  console.log(err)
+}
+window.func()

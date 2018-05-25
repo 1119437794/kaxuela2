@@ -11,14 +11,16 @@ export { default } from './model'
   <div class="root">
     <div class="quick">
       <div class="q-main">
-        <a class="left">[大牛应聘申请]</a>
+        <a class="left" href="">[大牛应聘申请]</a>
         <ul class="right">
           <li>
-            <img
-              class="img"
-              src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+            <a href="">
+              <img
+                class="img"
+                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+            </a>
           </li>
-          <li class="msg">消息</li>
+          <li class="msg"><a href="">消息</a></li>
           <li>
             <el-dropdown>
               <span class="el-dropdown-link user">
@@ -38,9 +40,10 @@ export { default } from './model'
     </div>
     <div class="nav">
       <div class="n-main">
-        <img
-          class="logo"
-          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>
+        <a class="logo" href="">
+          <img
+          src="../../../../static/imgs/logo.png"/>
+        </a>
         <el-menu :default-active="activeIndex" class="menu el-menu-demo" mode="horizontal" @select="handleSelect">
           <el-menu-item index="1">首页</el-menu-item>
           <el-menu-item index="2">全部视频</el-menu-item>
