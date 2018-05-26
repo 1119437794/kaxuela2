@@ -10,7 +10,7 @@ export default {
   },
   data () {
     return {
-      navs: [1, 1, 1, 2]
+      navs: new Array(5)
     }
   }
 }
