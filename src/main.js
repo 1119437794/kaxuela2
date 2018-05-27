@@ -19,7 +19,4 @@ new Vue({
   template: '<App/>'
 })
 
-window.onerror = function (err) {
-  console.log(err)
-}
 window.func()

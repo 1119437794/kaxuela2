@@ -22,8 +22,8 @@ export { default } from './model'
       </div>
       <div class="three">
         <el-tabs v-model="activeName" @tab-click="handleClick">
-          <el-tab-pane label="用户管理" name="first">热门视频</el-tab-pane>
-          <el-tab-pane label="配置管理" name="second">最新视频</el-tab-pane>
+          <el-tab-pane label="用户管理" name="first"></el-tab-pane>
+          <el-tab-pane label="配置管理" name="second"></el-tab-pane>
         </el-tabs>
         <div class="videos">
           <VideoItem />
