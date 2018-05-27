@@ -297,53 +297,8 @@ export { default } from './model'
    </div>
   </section>
   <!--推荐课程-->
-  <section class="section-postscript section--recommend" auto-test="mod_recommend_courses">
-   <div class="inner-center">
-    <h3 class="section-tt">老师还为你推荐了以下几门课程</h3>
-    <div class="section-bd course-card-list-single-wrap">
-     <!--
-    opt = {
-        simplify: true,  // 简化模式，少了第二行
-        sIndex:   1,     // 首页楼层上报用
-        fIndex:   2,     // 首页楼层上报用
-        noAgency: true,  // 简化模式下不展示机构信息，展示学习人数
-        showOrigin: true,  / 是否在价格后显示原价
-        hideStatus: true,// 隐藏课程状态栏
-        lazyload: true   // 课程图懒加载
-    }
-
- -->
-     <ul class="course-card-list" auto-test="">
-      <li class="course-card-item"> <a href="//ke.qq.com/course/154754" target="_blank" class="item-img-link" data-id="154754" data-index="1" report-tdw="action=Coursecard_Coursecover-clk&amp;ver1=154754&amp;ver3=1.1" cors-name="course"> <img src="http://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLDGTClDsicD2QUIOKKVab64ticsicvHbyAZiab7vz8eR36JxURpXG2s6LdvnoVIk9fib3BE/220" alt="如何打造差异化的智能硬件爆品？" title="如何打造差异化的智能硬件爆品？" class="item-img" width="220" height="124" onerror="this.src='http://9.url.cn/edu/lego_modules/edu-ui/0.0.1/img/nohash/img-err2.png';this.onerror=null;" /> </a> <h4 class="item-tt"> <a href="//ke.qq.com/course/154754" target="_blank" class="item-tt-link" title="如何打造差异化的智能硬件爆品？" report-tdw="action=Coursecard_Coursesname-clk&amp;ver1=154754&amp;ver3=1.1" cors-name="course">如何打造差异化的智能硬件爆品？</a> </h4>
-       <div class="item-line item-line--bottom">
-        <span class="line-cell item-price free">免费</span>
-        <span class="line-cell item-user item-user--right"> 405人最近报名 </span>
-       </div> </li>
-      <li class="course-card-item"> <a href="//ke.qq.com/course/174685" target="_blank" class="item-img-link" data-id="174685" data-index="2" report-tdw="action=Coursecard_Coursecover-clk&amp;ver1=174685&amp;ver3=1.2" cors-name="course"> <img src="http://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLAOLuTdykZSpum6PAtYy4hxPg2oR908LlbCwPbYicJvr17cDibzDh93gCEA64gk9nJ18/220" alt="7堂课，教你数据运营成功法则" title="7堂课，教你数据运营成功法则" class="item-img" width="220" height="124" onerror="this.src='http://9.url.cn/edu/lego_modules/edu-ui/0.0.1/img/nohash/img-err2.png';this.onerror=null;" /> </a> <h4 class="item-tt"> <a href="//ke.qq.com/course/174685" target="_blank" class="item-tt-link" title="7堂课，教你数据运营成功法则" report-tdw="action=Coursecard_Coursesname-clk&amp;ver1=174685&amp;ver3=1.2" cors-name="course">7堂课，教你数据运营成功法则</a> </h4>
-       <div class="item-line item-line--bottom">
-        <span class="line-cell item-price free">免费</span>
-        <span class="line-cell item-user item-user--right"> 2094人最近报名 </span>
-       </div> </li>
-      <li class="course-card-item"> <a href="//ke.qq.com/course/139229" target="_blank" class="item-img-link" data-id="139229" data-index="3" report-tdw="action=Coursecard_Coursecover-clk&amp;ver1=139229&amp;ver3=1.3" cors-name="course"> <img src="http://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLBDicW4EtE8IaUSH1qmQd1kVfHUppMNH9hYasaCMz2FcUr2QYUD6gxGc8kk2GLmdCA4/220" alt="前百度产品经理带你深读《用户体验要素》" title="前百度产品经理带你深读《用户体验要素》" class="item-img" width="220" height="124" onerror="this.src='http://9.url.cn/edu/lego_modules/edu-ui/0.0.1/img/nohash/img-err2.png';this.onerror=null;" /> </a> <h4 class="item-tt"> <a href="//ke.qq.com/course/139229" target="_blank" class="item-tt-link" title="前百度产品经理带你深读《用户体验要素》" report-tdw="action=Coursecard_Coursesname-clk&amp;ver1=139229&amp;ver3=1.3" cors-name="course">前百度产品经理带你深读《用户体验要素》</a> </h4>
-       <div class="item-line item-line--bottom">
-        <span class="line-cell item-price free">免费</span>
-        <span class="line-cell item-user item-user--right"> 843人最近报名 </span>
-       </div> </li>
-      <li class="course-card-item"> <a href="//ke.qq.com/course/233617" target="_blank" class="item-img-link" data-id="233617" data-index="4" report-tdw="action=Coursecard_Coursecover-clk&amp;ver1=233617&amp;ver3=1.4" cors-name="course"> <img src="http://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLABIlLCZtapW366GicjGOwEM6NP7W8B2b5qVmvFl3AM6DOic1TKjFiciblLX41E0vRKOO8/220" alt="腾讯产品总监：竞品分析四部曲" title="腾讯产品总监：竞品分析四部曲" class="item-img" width="220" height="124" onerror="this.src='http://9.url.cn/edu/lego_modules/edu-ui/0.0.1/img/nohash/img-err2.png';this.onerror=null;" /> </a> <h4 class="item-tt"> <a href="//ke.qq.com/course/233617" target="_blank" class="item-tt-link" title="腾讯产品总监：竞品分析四部曲" report-tdw="action=Coursecard_Coursesname-clk&amp;ver1=233617&amp;ver3=1.4" cors-name="course">腾讯产品总监：竞品分析四部曲</a> </h4>
-       <div class="item-line item-line--bottom">
-        <span class="line-cell item-price free">免费</span>
-        <span class="line-cell item-user item-user--right"> 660人最近报名 </span>
-       </div> </li>
-      <li class="course-card-item"> <a href="//ke.qq.com/course/224513" target="_blank" class="item-img-link" data-id="224513" data-index="5" report-tdw="action=Coursecard_Coursecover-clk&amp;ver1=224513&amp;ver3=1.5" cors-name="course"> <img src="http://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLDs5E4GX7DWRVDCqACGibibgjiaBfNe0DTNMtRlzuCTY9PEOUfaMvkiajuwg7KZwH7cdBE/220" alt="从新手村到打Boss，产品经理成长之路" title="从新手村到打Boss，产品经理成长之路" class="item-img" width="220" height="124" onerror="this.src='http://9.url.cn/edu/lego_modules/edu-ui/0.0.1/img/nohash/img-err2.png';this.onerror=null;" /> </a> <h4 class="item-tt"> <a href="//ke.qq.com/course/224513" target="_blank" class="item-tt-link" title="从新手村到打Boss，产品经理成长之路" report-tdw="action=Coursecard_Coursesname-clk&amp;ver1=224513&amp;ver3=1.5" cors-name="course">从新手村到打Boss，产品经理成长之路</a> </h4>
-       <div class="item-line item-line--bottom">
-        <span class="line-cell item-price free">免费</span>
-        <span class="line-cell item-user item-user--right"> 670人最近报名 </span>
-       </div> </li>
-     </ul>
-    </div>
-   </div>
-  </section>
   <!--包含尾部进来-->
+  <Footer />
 </div>
 
 </template>
