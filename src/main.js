@@ -18,5 +18,3 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-
-window.func()
