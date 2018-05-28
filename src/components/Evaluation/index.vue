@@ -1,9 +1,6 @@
 <style scoped lang="less">
   @import 'scoped.less';
 </style>
-<style lang="less">
-  @import 'override.less';
-</style>
 <script>
 export { default } from './model'
 </script>
