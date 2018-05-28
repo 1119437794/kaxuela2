@@ -4,6 +4,7 @@ import Index from '@/components/Index'
 import Login from '@/components/Login'
 import TopUp from '@/components/TopUp'
 import Video from '@/components/Video'
+import Evaluation from '@/components/Evaluation'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/video',
       name: 'Video',
       component: Video
+    },
+    {
+      path: '/evaluation',
+      name: 'Evaluation',
+      component: Evaluation
     }
   ]
 })
