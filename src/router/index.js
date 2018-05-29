@@ -2,9 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
 import Login from '@/components/Login'
-import TopUp from '@/components/TopUp'
+import Pay from '@/components/Pay'
 import Video from '@/components/Video'
 import Evaluation from '@/components/Evaluation'
+import {
+  TopUp,
+  PayPage
+} from '@/components/Pay/subPage'
 
 Vue.use(Router)
 
@@ -16,9 +20,18 @@ export default new Router({
       component: Login
     },
     {
-      path: '/topUp',
+      path: '/pay',
       name: 'TopUp',
-      component: TopUp
+      component: Pay,
+      children: [
+        {
+          path: '/',
+          component: PayPage
+        },
+        {
+          path: 'topUp',
+          component: TopUp
+        }]
     },
     {
       path: '/',

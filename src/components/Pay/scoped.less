@@ -1,0 +1,45 @@
+@import "../../style/common";
+
+@defult-border-color: #8E8E8E;
+@defilt-color: #3A3A3A;
+.header{
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  height: 55px;
+  line-height: 55px;
+  color: @defilt-color;
+
+  .logo{
+    position: relative;
+    top: 7px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: solid 1px @main-color;
+  }
+
+  .title{
+    display: inline-block;
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 10px;
+    font-weight: bold;
+    border-left: solid 1px @defult-border-color;
+  }
+
+  .rigth-p{
+    float: right;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+}
+.container{
+  color: @defilt-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #EFEFEF;
+}
+

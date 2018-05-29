@@ -1,7 +1,3 @@
-import {
-  Footer
-} from '../common'
-
 export default {
   name: 'TopUp',
   data () {
@@ -13,8 +9,5 @@ export default {
     chooseAmount: function (amount) {
       this.topUpAmount = amount
     }
-  },
-  components: {
-    Footer
   }
 }
