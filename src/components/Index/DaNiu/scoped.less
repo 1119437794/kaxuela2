@@ -1,0 +1,64 @@
+.daniu {
+  width: 287px;
+  height: 247px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #eaeeed;
+}
+.one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+}
+.img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+.user {
+  display: flex;
+  flex-direction: column;
+  color: #868585;
+  font-size: 14px;
+}
+.name {
+  margin-bottom: 5px;
+}
+.tag {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #868585;
+}
+.count {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px dashed #eaeeed;
+}
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 56px;
+  font-size: 14px;
+  color: #868585;
+  align-items: center;
+  justify-content: center;
+  // border-right: 1px solid #eaeeed;
+}
+.num {
+  color: #9EB3CE;
+  margin-bottom: 5px;
+}
+.item:not(:last-of-type)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1px;
+  height: 20px;
+  background-color: #eaeeed;
+}
+
