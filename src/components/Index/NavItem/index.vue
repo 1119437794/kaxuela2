@@ -12,8 +12,6 @@ export { default } from './model'
         <li class="nav"><a href="">Java</a></li>
         <li class="nav"><a href="">Java</a></li>
         <li class="nav"><a href="">Java</a></li>
-        <li class="nav"><a href="">Java</a></li>
-        <li class="nav"><a href="">Java</a></li>
       </ul>
       <i
         class="el-icon-arrow-right fold-icon"
@@ -23,7 +21,7 @@ export { default } from './model'
     </div>
     <div class="fold" v-if="fold">
       <div class="type">
-        <h3>后端开发</h3>
+        <h3 class="subtitle">后端开发</h3>
         <ul class="navs">
           <li class="nav"><a href="">Java</a></li>
           <li class="nav"><a href="">Java</a></li>
@@ -36,7 +34,7 @@ export { default } from './model'
         </ul>
       </div>
       <div class="type">
-        <h3>后端开发</h3>
+        <h3 class="subtitle">后端开发</h3>
         <ul class="navs">
           <li class="nav"><a href="">Java</a></li>
           <li class="nav"><a href="">Java</a></li>

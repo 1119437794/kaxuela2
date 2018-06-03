@@ -1,13 +1,16 @@
 <style scoped>
 @import './scoped.less';
 </style>
+<style>
+@import './override.less';
+</style>
 <script>
 export { default } from './model'
 </script>
 <template>
-  <div class="root">
+  <div class="root videoItem">
     <div class="a">
-      <i class="el-icon-date"></i>
+      <img src="./imgs/video.png" alt="">
       <h3>Java从入门到放弃</h3>
     </div>
     <p class="b">叫你如何从新手编程程序大拿</p>

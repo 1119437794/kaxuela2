@@ -1,21 +1,29 @@
-# kaixuela2
+## 开发
+### yxc
+- [x]  首页页面
+- [ ]  合伙人视频
+- [ ]  合伙人辅导课程
+- [ ]  合伙人文章
+- [ ]  全部订单
+- [ ]  全部订单辅导课程
+- [ ]  全部订单视频课程
+- [ ]  全部视频
+- [x]  视频页面
+- [ ]  视频页面课程目录
+- [ ]  视频页面评论
+- [ ]  文章
+- [ ]  文章未登录
+- [ ]  文章已登录
+- [ ]  我的关注
+- [ ]  我的收藏
+- [ ]  我的消息
+- [ ]  找大牛
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### lmj
+- [x]  充值页面
+- [ ]  课程评价页面
+- [ ]  密码登录页面
+- [ ]  验证码登录页面
+- [ ]  注册页面
+- [ ]  支付页面
+- [ ]  支付成功
