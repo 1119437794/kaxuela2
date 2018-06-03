@@ -46,10 +46,12 @@ export { default } from './model'
             <Video />
           </el-tab-pane>
           <el-tab-pane label="辅导课程" name="2">
+            <Course />
           </el-tab-pane>
           <el-tab-pane label="文章" name="3">
           </el-tab-pane>
         </el-tabs>
     </div>
+    <Footer />
   </div>
 </template>
