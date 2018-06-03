@@ -1,10 +1,7 @@
-import CourseDesc from './Desc'
-
 export default {
-  name: 'video',
+  name: 'Desc',
   components: {
-    ...require('../common'),
-    CourseDesc
+    ...require('../../common')
   },
   data () {
     return {
