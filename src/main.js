@@ -8,6 +8,7 @@ import ElementUI from 'element-ui'
 import 'iview/dist/styles/iview.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import './style/reset.css'
+import './style/common.less'
 
 Vue.config.productionTip = false
 

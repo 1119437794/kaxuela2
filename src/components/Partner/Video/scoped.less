@@ -1,6 +1,7 @@
 .item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 150px;
   border-bottom: 1px solid #f0f0f0;
 }
@@ -10,12 +11,14 @@
 }
 .title {
   margin-left: 10px;
-  font-size: 14px;
+  font-size: 20px;
+  color: #363636;
+  font-weight: bold;
 }
 .two {
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 .tag {
   display: flex;
@@ -28,16 +31,18 @@
   border-color: #f0f0f0;
 }
 .datetime {
-  color: #383838;
+  color: #363636;
   font-size: 14px;
 }
 .count {
-  color: #383838;
+  display: flex;
+  color: #363636;
   font-size: 14px;
-  margin: 0 8px;
+}
+.count li {
+  margin-right: 10px;
 }
 .thumb {
   width: 150px;
   height: 110px;
-  margin-left: 200px;
 }

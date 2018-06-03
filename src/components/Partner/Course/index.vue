@@ -11,7 +11,7 @@ export { default } from './model'
     <div class="item">
      <div>
        <div class="one">
-         <i class="el-icon-share"></i>
+         <Icon type="ios-videocam" size="18"></Icon>
          <div class="title">辅导内容：X行啊擦擦</div>
        </div>
        <div class="two">
@@ -29,7 +29,7 @@ export { default } from './model'
      <div class="item">
      <div>
        <div class="one">
-         <i class="el-icon-share"></i>
+         <Icon type="ios-videocam"></Icon>
          <div class="title">辅导内容：X行啊擦擦</div>
        </div>
        <div class="two">

@@ -18,19 +18,23 @@ export { default } from './model'
             <ul class="count">
               <li class="item">
                 <span >55</span>
-                <span class="label">视频</span>
+                <span class="label">视频&nbsp;></span>
               </li>
               <li class="item">
                 <span >55</span>
-                <span class="label">视频</span>
+                <span class="label">文章&nbsp;></span>
               </li>
               <li class="item">
                 <span >55</span>
-                <span class="label">视频</span>
+                <span class="label">粉丝&nbsp;></span>
               </li>
               <li class="item">
                 <span >55</span>
-                <span class="label">视频</span>
+                <span class="label">字数</span>
+              </li>
+              <li class="item">
+                <span >55</span>
+                <span class="label">收获喜欢</span>
               </li>
             </ul>
           </div>
