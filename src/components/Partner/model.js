@@ -1,12 +1,14 @@
 import Video from './Video'
 import Course from './Course'
+import Article from './Article'
 
 export default {
   name: 'partner',
   components: {
     ...require('../common'),
     Video,
-    Course
+    Course,
+    Article
   },
   data () {
     return {
