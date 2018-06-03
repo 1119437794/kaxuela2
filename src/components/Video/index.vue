@@ -39,7 +39,9 @@ export { default } from './model'
           <el-tab-pane label="课程概述" name="first">
             <CourseDesc />
           </el-tab-pane>
-          <el-tab-pane label="课程目录" name="two"></el-tab-pane>
+          <el-tab-pane label="课程目录" name="two">
+            <CourseDir />
+          </el-tab-pane>
           <el-tab-pane label="评论" name="three"></el-tab-pane>
         </el-tabs>
       </div>
