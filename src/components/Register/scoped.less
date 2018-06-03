@@ -1,4 +1,56 @@
 @import "../../style/common";
 .container{
   color: #333333;
+
+  .header{
+    width: 1200px;
+    margin: 0 auto;
+
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+  }
+
+  .banner {
+    height: 186px;
+    background-image: url("../../../static/imgs/registerBanner.jpg");
+  }
+
+  .content {
+    width: 1200px;
+    margin: 0 auto;
+
+    .steps{
+      width: 240px;
+      margin: 20px auto;
+    }
+
+    .form{
+      margin: 0 auto;
+      width: 520px;
+
+      .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+      }
+      .avatar {
+        width: 70px;
+        height: 70px;
+        display: block;
+      }
+
+      .next, .submit{
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .submit{
+        margin-top: 40px;
+      }
+    }
+  }
 }
