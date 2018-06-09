@@ -1,5 +1,5 @@
 export default {
-  name: 'VideoItem',
+  name: '视频简介项',
   components: {
   },
   data () {

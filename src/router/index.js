@@ -7,6 +7,7 @@ import Pay from '@/components/Pay'
 import Video from '@/components/Video'
 import Partner from '@/components/Partner'
 import Order from '@/components/Order'
+import AllVideo from '@/components/AllVideo'
 import Evaluation from '@/components/Evaluation'
 import {
   TopUp,
@@ -70,6 +71,11 @@ export default new Router({
       path: '/order',
       name: 'Order',
       component: Order
+    },
+    {
+      path: '/allVideo',
+      name: '全部视频',
+      component: AllVideo
     }
   ]
 })

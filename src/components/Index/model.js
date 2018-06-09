@@ -1,5 +1,4 @@
 import NavItem from './NavItem'
-import VideoItem from './VideoItem'
 import DaNiu from './DaNiu'
 
 export default {
@@ -7,7 +6,6 @@ export default {
   components: {
     ...require('../common'),
     NavItem,
-    VideoItem,
     DaNiu
   },
   data () {
