@@ -9,19 +9,19 @@ export { default } from './model'
     <Header />
     <div class="main">
       <el-menu
-        default-active="2"
+        :default-active="activeNav"
         class="el-menu-vertical-demo left"
-        @open="handleOpen"
-        @close="handleClose">
-        <el-menu-item index="1">
+        @select="onNavChange"
+      >
+        <el-menu-item index="全部订单">
           <i class="el-icon-location"></i>
           <span slot="title">全部订单</span>
         </el-menu-item>
-        <el-menu-item index="2">
+        <el-menu-item index="辅导课程">
           <i class="el-icon-menu"></i>
           <span slot="title">辅导课程</span>
         </el-menu-item>
-        <el-menu-item index="3">
+        <el-menu-item index="视频课程">
           <i class="el-icon-document"></i>
           <span slot="title">视频课程</span>
         </el-menu-item>

@@ -1,5 +1,5 @@
 export default {
-  name: '文章列表项',
+  name: 'ArticleItem',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

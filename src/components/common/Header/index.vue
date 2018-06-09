@@ -22,16 +22,19 @@ export { default } from './model'
           </li>
           <li class="msg"><a href="">消息</a></li>
           <li>
-            <el-dropdown>
+            <el-dropdown
+              size="small"
+              placement="bottom-start"
+            >
               <span class="el-dropdown-link user">
                 橙子<i class="el-icon-arrow-down el-icon--right"></i>
               </span>
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>黄金糕</el-dropdown-item>
-                <el-dropdown-item>狮子头</el-dropdown-item>
-                <el-dropdown-item>螺蛳粉</el-dropdown-item>
-                <el-dropdown-item disabled>双皮奶</el-dropdown-item>
-                <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
+                <el-dropdown-item>基础信息</el-dropdown-item>
+                <el-dropdown-item>全部订单</el-dropdown-item>
+                <el-dropdown-item>我的关注</el-dropdown-item>
+                <el-dropdown-item>我的收藏</el-dropdown-item>
+                <el-dropdown-item>退出</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </li>
@@ -40,16 +43,20 @@ export { default } from './model'
     </div>
     <div class="nav">
       <div class="n-main">
-        <a class="logo" href="">
-          <img
-          src="../../../../static/imgs/logo.png"/>
+        <a class="logo" href="/">
+          <img src="../../../../static/imgs/logo.png"/>
         </a>
-        <el-menu :default-active="activeIndex" class="menu el-menu-demo" mode="horizontal" @select="handleSelect">
-          <el-menu-item index="1">首页</el-menu-item>
-          <el-menu-item index="2">全部视频</el-menu-item>
-          <el-menu-item index="3">找大牛</el-menu-item>
-          <el-menu-item index="4">文章</el-menu-item>
-          <el-menu-item index="5">招聘</el-menu-item>
+        <el-menu
+          :default-active="activeNav"
+          class="menu el-menu-demo"
+          mode="horizontal"
+          @select="onNavChange"
+        >
+          <el-menu-item
+            v-for="({name, path}, index) in navs"
+            :key="index"
+            :index="path"
+          >{{name}}</el-menu-item>
         </el-menu>
       </div>
     </div>

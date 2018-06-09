@@ -1,5 +1,5 @@
 export default {
-  name: 'Footer',
+  name: 'Search',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

@@ -1,9 +1,7 @@
 
 export default {
-  name: '文章详情',
+  name: 'ArticleDetail',
   components: {
     ...require('../common')
-  },
-  data () {
   }
 }

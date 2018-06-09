@@ -12,7 +12,7 @@ export default {
   },
   data () {
     return {
-      aaa: 'Welcome to Your Vue.js App'
+      activeTab: '课程概述'
     }
   }
 }

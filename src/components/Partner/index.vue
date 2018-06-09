@@ -45,14 +45,14 @@ export { default } from './model'
           <div class="tag">90后 无所自在</div>
         </div>
       </div>
-      <el-tabs v-model="activeName" @tab-click="handleClick">
-          <el-tab-pane label="视频" name="1">
+      <el-tabs v-model="activeTab" @tab-click="handleClick">
+          <el-tab-pane label="视频" name="视频">
             <Video />
           </el-tab-pane>
-          <el-tab-pane label="辅导课程" name="2">
+          <el-tab-pane label="辅导课程" name="辅导课程">
             <Course />
           </el-tab-pane>
-          <el-tab-pane label="文章" name="3">
+          <el-tab-pane label="文章" name="文章">
             <ArticleItem />
           </el-tab-pane>
         </el-tabs>

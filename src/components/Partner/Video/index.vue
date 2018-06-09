@@ -11,7 +11,7 @@ export { default } from './model'
     <div class="item">
       <div class="left">
         <div class="one">
-          <Icon type="ios-videocam" size="28"></Icon>
+          <img class="one-icon" src="../imgs/video.png" alt="">
           <div class="title">JAVA反手写代码</div>
         </div>
         <div class="two">
@@ -21,7 +21,7 @@ export { default } from './model'
         </div>
         <ul class="count">
           <li>
-            <Icon type="social-youtube-outline"></Icon>&nbsp;199
+            <Icon type="eye"></Icon>&nbsp;199
           </li>
           <li>
             <Icon type="chatbox"></Icon>&nbsp;199
@@ -35,10 +35,10 @@ export { default } from './model'
         <img class="thumb" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
       </div>
     </div>
-<div class="item">
+    <div class="item">
       <div class="left">
         <div class="one">
-          <Icon type="ios-videocam" size="28"></Icon>
+          <img class="one-icon" src="../imgs/video.png" alt="">
           <div class="title">JAVA反手写代码</div>
         </div>
         <div class="two">
@@ -48,7 +48,7 @@ export { default } from './model'
         </div>
         <ul class="count">
           <li>
-            <Icon type="social-youtube-outline"></Icon>&nbsp;199
+            <Icon type="eye"></Icon>&nbsp;199
           </li>
           <li>
             <Icon type="chatbox"></Icon>&nbsp;199

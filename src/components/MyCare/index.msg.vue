@@ -12,8 +12,8 @@ export { default } from './model'
         <img class="head-img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
         <h3 class="username">i 翱翔恒子</h3>
       </div>
-      <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="我的消息" name="first"></el-tab-pane>
+      <el-tabs value="我的关注" @tab-click="handleClick">
+        <el-tab-pane label="我的关注" name="我的关注"></el-tab-pane>
       </el-tabs>
       <div class="item">
         <img class="item-img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">

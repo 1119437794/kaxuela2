@@ -12,7 +12,7 @@ import SearchDaNiu from '@/components/SearchDaNiu'
 import Article from '@/components/Article'
 import ArticleDetail from '@/components/ArticleDetail'
 import MyCollect from '@/components/MyCollect'
-import MyMessage from '@/components/MyMessage'
+import MyCare from '@/components/MyCare'
 import Evaluation from '@/components/Evaluation'
 import {
   TopUp,
@@ -103,9 +103,9 @@ export default new Router({
       component: MyCollect
     },
     {
-      path: '/myMessage',
-      name: '我的消息',
-      component: MyMessage
+      path: '/myCare',
+      name: '我的关注',
+      component: MyCare
     }
   ]
 })

@@ -21,9 +21,9 @@ export { default } from './model'
         </div>
       </div>
       <div class="three">
-        <el-tabs v-model="activeName" @tab-click="handleClick">
-          <el-tab-pane label="热门视频" name="first"></el-tab-pane>
-          <el-tab-pane label="最新视频" name="second"></el-tab-pane>
+        <el-tabs v-model="activeVideoType" @tab-click="handleClick">
+          <el-tab-pane label="热门视频" name="热门视频"></el-tab-pane>
+          <el-tab-pane label="最新视频" name="最新视频"></el-tab-pane>
         </el-tabs>
         <div class="videos">
           <VideoItem />
@@ -41,8 +41,8 @@ export { default } from './model'
         </div>
       </div>
       <div class="four">
-        <el-tabs v-model="activeName" @tab-click="handleClick">
-          <el-tab-pane label="热门大牛" name="first"></el-tab-pane>
+        <el-tabs value="热门大牛" @tab-click="handleClick">
+          <el-tab-pane label="热门大牛" name="热门大牛"></el-tab-pane>
         </el-tabs>
         <div class="fourMain">
           <DaNiuItem />

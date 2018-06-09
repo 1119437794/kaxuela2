@@ -1,9 +1,7 @@
 
 export default {
-  name: '我的消息',
+  name: 'MyCare',
   components: {
     ...require('../common')
-  },
-  data () {
   }
 }

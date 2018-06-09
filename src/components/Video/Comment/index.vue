@@ -54,6 +54,12 @@ export { default } from './model'
           <span class="date">评价时间：2018/09/09</span>
         </div>
       </div>
+      <el-pagination
+        class="pagination"
+        background
+        layout="prev, pager, next"
+        :total="1000">
+      </el-pagination>
     </div>
   </div>
 </template>

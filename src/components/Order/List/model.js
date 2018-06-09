@@ -1,5 +1,3 @@
 export default {
-  name: 'Guide',
-  data () {
-  }
+  name: 'Guide'
 }

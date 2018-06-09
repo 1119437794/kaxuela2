@@ -1,9 +1,7 @@
 
 export default {
-  name: '我的收藏',
+  name: 'MyCollect',
   components: {
     ...require('../common')
-  },
-  data () {
   }
 }

@@ -1,5 +1,5 @@
 export default {
-  name: 'daniu',
+  name: 'DaNiuItem',
   components: {
   },
   data () {

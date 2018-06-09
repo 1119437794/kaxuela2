@@ -53,7 +53,7 @@ export { default } from './model'
               写下你的评论
               <div class="unlogin">
                 <el-button class="right-lg-btn" round>&nbsp;登录&nbsp;</el-button>
-                <span>后查看更多</span>
+                &emsp;<span>后查看更多</span>
               </div>
             </div>
             <!-- <textarea class="text" name="" id="" cols="30" rows="10"></textarea> -->

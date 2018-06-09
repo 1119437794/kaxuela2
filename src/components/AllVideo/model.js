@@ -1,9 +1,7 @@
 
 export default {
-  name: '全部视频',
+  name: 'AllVideo',
   components: {
     ...require('../common')
-  },
-  data () {
   }
 }

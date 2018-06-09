@@ -8,7 +8,8 @@ export default {
   },
   data () {
     return {
-      navs: new Array(5)
+      navs: new Array(5),
+      activeVideoType: '热门视频'
     }
   }
 }

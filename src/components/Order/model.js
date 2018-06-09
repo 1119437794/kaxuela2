@@ -7,5 +7,13 @@ export default {
     List
   },
   data () {
+    return {
+      activeNav: '全部订单'
+    }
+  },
+  methods: {
+    onNavChange (nav) {
+      this.activeNav = nav
+    }
   }
 }
