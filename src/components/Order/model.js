@@ -1,7 +1,10 @@
+import List from './List'
+
 export default {
   name: 'Order',
   components: {
-    ...require('../common')
+    ...require('../common'),
+    List
   },
   data () {
   }
