@@ -49,7 +49,14 @@ export { default } from './model'
         <div class="comment">
           <div class="input">
             <img class="head" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <textarea class="text" name="" id="" cols="30" rows="10">写下你的评论</textarea>
+            <div contenteditable class="text" >
+              写下你的评论
+              <div class="unlogin">
+                <el-button class="right-lg-btn" round>&nbsp;登录&nbsp;</el-button>
+                <span>后查看更多</span>
+              </div>
+            </div>
+            <!-- <textarea class="text" name="" id="" cols="30" rows="10"></textarea> -->
           </div>
           <div class="total">245条评论</div>
           <div class="dialog">
