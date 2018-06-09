@@ -45,14 +45,14 @@ export { default } from './model'
           <el-tab-pane label="热门大牛" name="first"></el-tab-pane>
         </el-tabs>
         <div class="fourMain">
-          <DaNiu />
-          <DaNiu />
-          <DaNiu />
-          <DaNiu />
-          <DaNiu />
-          <DaNiu />
-          <DaNiu />
-          <DaNiu />
+          <DaNiuItem />
+          <DaNiuItem />
+          <DaNiuItem />
+          <DaNiuItem />
+          <DaNiuItem />
+          <DaNiuItem />
+          <DaNiuItem />
+          <DaNiuItem />
         </div>
         <div class="btn">
           <a href="">

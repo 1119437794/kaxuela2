@@ -8,6 +8,7 @@ import Video from '@/components/Video'
 import Partner from '@/components/Partner'
 import Order from '@/components/Order'
 import AllVideo from '@/components/AllVideo'
+import SearchDaNiu from '@/components/SearchDaNiu'
 import Evaluation from '@/components/Evaluation'
 import {
   TopUp,
@@ -76,6 +77,11 @@ export default new Router({
       path: '/allVideo',
       name: '全部视频',
       component: AllVideo
+    },
+    {
+      path: '/searchDaNiu',
+      name: '找大牛',
+      component: SearchDaNiu
     }
   ]
 })
