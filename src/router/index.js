@@ -6,6 +6,7 @@ import Register from '@/components/Register'
 import Pay from '@/components/Pay'
 import Video from '@/components/Video'
 import Partner from '@/components/Partner'
+import Order from '@/components/Order'
 import Evaluation from '@/components/Evaluation'
 import {
   TopUp,
@@ -64,6 +65,11 @@ export default new Router({
       path: '/partner',
       name: 'Partner',
       component: Partner
+    },
+    {
+      path: '/order',
+      name: 'Order',
+      component: Order
     }
   ]
 })
