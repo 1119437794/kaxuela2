@@ -11,6 +11,7 @@ import AllVideo from '@/components/AllVideo'
 import SearchDaNiu from '@/components/SearchDaNiu'
 import Article from '@/components/Article'
 import ArticleDetail from '@/components/ArticleDetail'
+import MyCollect from '@/components/MyCollect'
 import Evaluation from '@/components/Evaluation'
 import {
   TopUp,
@@ -94,6 +95,11 @@ export default new Router({
       path: '/articleDetail',
       name: '文章详情',
       component: ArticleDetail
+    },
+    {
+      path: '/myCollect',
+      name: '我的收藏',
+      component: MyCollect
     }
   ]
 })
