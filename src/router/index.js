@@ -9,6 +9,7 @@ import Partner from '@/components/Partner'
 import Order from '@/components/Order'
 import AllVideo from '@/components/AllVideo'
 import SearchDaNiu from '@/components/SearchDaNiu'
+import Article from '@/components/Article'
 import Evaluation from '@/components/Evaluation'
 import {
   TopUp,
@@ -82,6 +83,11 @@ export default new Router({
       path: '/searchDaNiu',
       name: '找大牛',
       component: SearchDaNiu
+    },
+    {
+      path: '/article',
+      name: '文章',
+      component: Article
     }
   ]
 })

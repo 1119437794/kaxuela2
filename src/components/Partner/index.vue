@@ -53,7 +53,7 @@ export { default } from './model'
             <Course />
           </el-tab-pane>
           <el-tab-pane label="文章" name="3">
-            <Article />
+            <ArticleItem />
           </el-tab-pane>
         </el-tabs>
     </div>
