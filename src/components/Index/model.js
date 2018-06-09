@@ -1,7 +1,7 @@
 import NavItem from './NavItem'
 
 export default {
-  name: 'Index',
+  name: '首页',
   components: {
     ...require('../common'),
     NavItem

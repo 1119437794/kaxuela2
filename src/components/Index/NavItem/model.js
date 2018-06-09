@@ -1,5 +1,5 @@
 export default {
-  name: 'NavItem',
+  name: '首页里的导航',
   components: {
   },
   data () {

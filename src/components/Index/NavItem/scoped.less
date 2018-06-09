@@ -3,11 +3,27 @@
   display: flex;
   align-items: center;
   height: 55px;
+  width: 272px;
+  padding-left: 10px;
+  &:hover {
+    box-shadow: -1px 1px 1px #eeeeee;
+    border: 1px solid #eeeeee;
+    border-right: none;
+    &::after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      width: 2px;
+      height: 100%;
+      background-color: #fff;
+      z-index: 99;
+    }
+  }
 }
 .title {
   font-size: 18px;
   font-weight: normal;
-  color: #868585
+  color: #333333
 }
 .unfold {
   display: flex;
@@ -19,34 +35,44 @@
   margin: 0 10px;
 }
 .nav a {
-  color: #868585;
+  color: #333333;
   font-size: 14px;
 
 }
 .fold {
   position: absolute;
-  top: 0;
-  left: 300px;
-  width: 600px;
+  top: -1px;
+  left: 270px;
+  width: 550px;
   padding: 10px;
   background: #fff;
+  z-index: 98;
   // border: 1px solid gray;
   // border-radius: 4px;
   // border-left: none;
 }
+.show {
+  // border-right: none;
+  border: 1px solid #eeeeee;
+  box-shadow: 1px 1px 1px #eeeeee;
+}
 .fold-icon {
   cursor: pointer;
   position: absolute;
-  right: 60px;
-  color: #868585;
+  right: 10px;
+  color: #333333;
 }
 .subtitle {
-  margin-bottom: 5px;
-  font-size: 16px;
+  margin: 0 10px;
   font-weight: normal;
-  color: #868585;
+  color: #96b4d0;
 }
 .type {
-  margin-bottom: 20px;
+  display: flex;
+  font-size: 14px;
+  color: #333333;
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
 }
 
