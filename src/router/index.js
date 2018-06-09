@@ -10,6 +10,7 @@ import Order from '@/components/Order'
 import AllVideo from '@/components/AllVideo'
 import SearchDaNiu from '@/components/SearchDaNiu'
 import Article from '@/components/Article'
+import ArticleDetail from '@/components/ArticleDetail'
 import Evaluation from '@/components/Evaluation'
 import {
   TopUp,
@@ -88,6 +89,11 @@ export default new Router({
       path: '/article',
       name: '文章',
       component: Article
+    },
+    {
+      path: '/articleDetail',
+      name: '文章详情',
+      component: ArticleDetail
     }
   ]
 })
