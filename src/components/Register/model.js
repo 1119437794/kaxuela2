@@ -69,5 +69,15 @@ export default {
   },
   components: {
     Footer
+  },
+  async created () {
+    const res = await http.post('/auth/register', {
+      phone: '18482127629',
+      code: '1314',
+      username: '前端🦅',
+      password: '123456',
+      nickname: '小白'
+    })
+    console.log(res, '此处只管处理正确的时候的逻辑，其他逻辑都被拦截处理了')
   }
 }
