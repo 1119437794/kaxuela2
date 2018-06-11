@@ -1,3 +1,6 @@
+
+console.log(axios)
+
 export default {
   name: 'Login',
   data () {
