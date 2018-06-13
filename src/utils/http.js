@@ -6,10 +6,11 @@ const vue = new Vue({})
 const methods = ['get', 'post', 'put', 'delete']
 
 const http = function ({ method = 'get', url, data }) {
+  const token = localStorage.token
   return axios({
     method,
     url,
-    data,
+    data: Object.assign(data, token && { token }),
     baseURL: 'http://118.24.77.192/'
   })
     .then(function ({ data }) {
