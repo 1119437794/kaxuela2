@@ -17,18 +17,18 @@ export default {
           { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
         ],
         passWord: [
-          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
+          { required: true, message: '请输入密码', trigger: 'blur' }
         ]
       },
       codeRules: {
         phoneNumber: [
-          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
+          { required: true, message: '请输入常用手机号', trigger: 'blur' }
         ],
         vCode: [
-          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
+          { required: true, message: '请输入验证码', trigger: 'blur' }
         ],
         verificationCode: [
-          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
+          { required: true, message: '请输入验证码', trigger: 'blur' }
         ]
       }
     }
@@ -40,7 +40,7 @@ export default {
     submitForm: function (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          this.login()
         } else {
           console.log('error submit!!')
           return false
@@ -56,6 +56,13 @@ export default {
           return false
         }
       })
+    },
+    async login () {
+      const res = await http.post('/auth/passlogin', {
+        username: this.formData.user,
+        password: this.formData.passWord
+      })
+      console.log(res)
     }
   }
 }
