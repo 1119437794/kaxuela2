@@ -33,11 +33,11 @@ export { default } from './model'
       >
         <el-form-item label="头像" prop="headPortrait">
           <el-upload
+            action="http://118.24.77.192/public/upload/img"
             class="avatar-uploader"
             :show-file-list="false"
-            :on-success="uploadOk"
-            :before-upload="beforeAvatarUpload">
-            <img v-if="imageUrl" :src="imageUrl" class="avatar">
+            :on-preview="beforeAvatarUpload">
+            <img v-if="registerForm.imageUrl" :src="registerForm.imageUrl" class="avatar">
             <i v-else class="el-icon-upload2 avatar-uploader-icon"></i>
             <div slot="tip" class="el-upload__tip avater-upload-tip">
               建议使用真实头像提升真实性、专业性
@@ -102,10 +102,12 @@ export { default } from './model'
           <el-input
             placeholder="请输入验证码"
             v-model="registerPhoneForm.verificateCode"
-          ></el-input>
+          >
+            <span slot="append">获取验证码</span>
+          </el-input>
         </el-form-item>
         <el-form-item class="submit">
-          <div class="btn btn_green btn-radius">提交</div>
+          <div @click="submit('registerPhoneForm')" class="btn btn_green btn-radius">提交</div>
         </el-form-item>
       </el-form>
     </div>

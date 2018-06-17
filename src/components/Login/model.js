@@ -17,18 +17,18 @@ export default {
           { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
         ],
         passWord: [
-          { required: true, message: '请输入密码', trigger: 'blur' }
+          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
         ]
       },
       codeRules: {
         phoneNumber: [
-          { required: true, message: '请输入常用手机号', trigger: 'blur' }
+          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
         ],
         vCode: [
-          { required: true, message: '请输入验证码', trigger: 'blur' }
+          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
         ],
         verificationCode: [
-          { required: true, message: '请输入验证码', trigger: 'blur' }
+          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
         ]
       }
     }
@@ -38,9 +38,10 @@ export default {
       this.tabPanel = tabName
     },
     submitForm: function (formName) {
+      console.log(formName)
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.login()
+          this.formSubmit()
         } else {
           console.log('error submit!!')
           return false
@@ -50,19 +51,31 @@ export default {
     submitCodeForm: function (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          this.codeSubmit()
         } else {
           console.log('error submit!!')
           return false
         }
       })
     },
-    async login () {
+
+    async codeSubmit () {
+      const res = await http.post('/auth/codelogin', {
+        phone: this.formData.phoneNumber,
+        code: this.formData.vCode
+      })
+      console.log(res)
+    },
+
+    async formSubmit () {
       const res = await http.post('/auth/passlogin', {
         username: this.formData.user,
         password: this.formData.passWord
       })
-      console.log(res)
+      localStorage.setItem('token', res.data.token)
+      this.$router.push({
+        path: '/'
+      })
     }
   }
 }

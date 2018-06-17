@@ -8,7 +8,7 @@
 export { default } from './model'
 </script>
 <template>
-  <div>
+  <div v-slideIn="200">
     <header class="sso_header">
       <a href="http://www.lagou.com" class="logo "> </a>
     </header>
@@ -48,6 +48,7 @@ export { default } from './model'
                 class="line-input"
                 placeholder="请输入密码"
                 type="password"
+                @keyup.native.enter="submitForm('formData')"
                 v-model="formData.passWord"
                 auto-complete="off"
               ></el-input>
@@ -56,7 +57,10 @@ export { default } from './model'
               <a  href="#">忘记密码?</a>
             </div>
             <el-form-item>
-              <div class="btn btn_green btn_block btn-radius" @click="submitForm('formData')">登录</div>
+              <div
+                class="btn btn_green btn_block btn-radius"
+                @click="submitForm('formData')"
+              >登录</div>
             </el-form-item>
           </el-form>
         </div>
@@ -103,7 +107,7 @@ export { default } from './model'
       <div class="divider fl code_divider"></div>
       <div class="right_area fl">
         <h5>还没有帐号:</h5>
-        <a href="#" class="register_now">立即注册</a>
+        <a href="/register" class="register_now">立即注册</a>
         <i class="el-icon-d-arrow-right mainColor"></i>
       </div>
     </section>

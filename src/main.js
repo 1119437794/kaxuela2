@@ -12,6 +12,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './style/reset.css'
 import './style/common.less'
 import './utils/http'
+import './directives'
 
 Vue.config.productionTip = false
 

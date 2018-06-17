@@ -61,7 +61,15 @@ export default {
         if (valid) {
           this.registerType = 2
         } else {
-          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+    submit (formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          this.created()
+        } else {
           return false
         }
       })
@@ -72,11 +80,14 @@ export default {
   },
   async created () {
     const res = await http.post('/auth/register', {
-      phone: '18482127629',
-      code: '1314',
-      username: '前端🦅',
-      password: '123456',
-      nickname: '小白'
+      phone: this.registerPhoneForm.phone,
+      code: this.registerPhoneForm.code,
+      username: this.registerForm.name,
+      password: this.registerForm.password,
+      nickname: this.registerForm.nickname,
+      good: this.registerForm.goodAt,
+      headimg: this.registerForm.imageUrl,
+      type: 1
     })
     console.log(res, '此处只管处理正确的时候的逻辑，其他逻辑都被拦截处理了')
   }
