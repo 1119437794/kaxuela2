@@ -2,7 +2,11 @@ export default {
   name: 'FriendLink',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      hyperlink: []
     }
+  },
+  async created () {
+    const { data: hyperlink } = await http.post('/public/hyperlink')
+    this.hyperlink = hyperlink
   }
 }
