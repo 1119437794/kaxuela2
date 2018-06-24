@@ -25,32 +25,14 @@ export { default } from './model'
       <dt>
        热门搜索：
       </dt>
-      <dd data-lg-tj-id="27u0" data-lg-tj-no="0001" data-lg-tj-cid="null">
-       <a href="https://www.lagou.com/jobs/list_%E6%96%B0%E5%AA%92%E4%BD%93%E8%BF%90%E8%90%A5?labelWords=sug&amp;fromSearch=true&amp;suginput=%E6%96%B0%E5%AA%92%E4%BD%93" class="highlight" target="_self">新媒体运营</a>
-      </dd>
-      <dd data-lg-tj-id="27u0" data-lg-tj-no="0002" data-lg-tj-cid="null">
-       <a href="http://www.lagou.com/zhaopin/shichangtuiguang/?labelWords=label" class="highlight" target="_self">市场推广</a>
-      </dd>
-      <dd data-lg-tj-id="27u0" data-lg-tj-no="0003" data-lg-tj-cid="null">
-       <a href="http://www.lagou.com/jobs/list_%E4%BA%A7%E5%93%81%E8%BF%90%E8%90%A5?labelWords=&amp;fromSearch=true&amp;suginput" class="highlight" target="_self">产品运营</a>
-      </dd>
-      <dd data-lg-tj-id="27u0" data-lg-tj-no="0004" data-lg-tj-cid="null">
-       <a href="https://www.lagou.com/zhaopin/PHP/?labelWords=label" class="highlight" target="_self">PHP</a>
-      </dd>
-      <dd data-lg-tj-id="27u0" data-lg-tj-no="0005" data-lg-tj-cid="null">
-       <a href="https://www.lagou.com/zhaopin/xiaoshoujingli/?labelWords=label" class="highlight" target="_self">销售经理</a>
-      </dd>
-      <dd data-lg-tj-id="27u0" data-lg-tj-no="0006" data-lg-tj-cid="null">
-       <a href="https://www.lagou.com/zhaopin/chanpinjingli1/?labelWords=label" class="highlight" target="_self">产品经理</a>
-      </dd>
-      <dd data-lg-tj-id="27u0" data-lg-tj-no="0007" data-lg-tj-cid="null">
-       <a href="https://www.lagou.com/zhaopin/C++/?labelWords=label" class="highlight" target="_self">C++</a>
-      </dd>
-      <dd data-lg-tj-id="27u0" data-lg-tj-no="0008" data-lg-tj-cid="null">
-       <a href="https://www.lagou.com/jobs/list_java?city=%E5%8C%97%E4%BA%AC&amp;cl=false&amp;fromSearch=true&amp;labelWords=&amp;suginput=" class="highlight" target="_self">Java</a>
-      </dd>
-      <dd data-lg-tj-id="27u0" data-lg-tj-no="0009" data-lg-tj-cid="null">
-       <a href="http://www.lagou.com/app/download.html?source=search_app" class="highlight">拉勾APP</a>
+      <dd
+        data-lg-tj-id="27u0"
+        data-lg-tj-no="0001"
+        data-lg-tj-cid="null"
+        v-for="(item ,index) of hot"
+        :key="index"
+      >
+       <a href="" class="highlight" target="_self">{{item.keyword}}</a>
       </dd>
      </dl>
     </div>

@@ -2,7 +2,11 @@ export default {
   name: 'Search',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      hot: []
     }
+  },
+  async created () {
+    const { data: hot } = await http.post('/public/keywords')
+    this.hot = hot
   }
 }
