@@ -9,7 +9,7 @@ export { default } from './model'
     <div class="one">
       <img class="img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
       <div class="user">
-        <span class="name">xiaochengzi</span>
+        <span class="name">{{dataSource.name}}</span>
         <span class="job">平面设计</span>
       </div>
     </div>

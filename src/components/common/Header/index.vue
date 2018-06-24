@@ -21,13 +21,13 @@ export { default } from './model'
             </a>
           </li>
           <li class="msg"><a href="">消息</a></li>
-          <li>
+          <li v-if="username">
             <el-dropdown
               size="small"
               placement="bottom-start"
             >
               <span class="el-dropdown-link user">
-                橙子<i class="el-icon-arrow-down el-icon--right"></i>
+                {{username}}<i class="el-icon-arrow-down el-icon--right"></i>
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item>基础信息</el-dropdown-item>

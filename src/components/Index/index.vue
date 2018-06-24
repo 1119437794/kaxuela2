@@ -6,18 +6,21 @@ export { default } from './model'
 </script>
 <template>
   <div class="root">
-    <Header />
+    <Header
+      :username="username"
+    />
     <Search />
     <div class="main">
       <div class="two">
         <div class="navs">
           <NavItem
-            v-for="(item, i) in navs"
+            v-for="(item, i) of category"
             :key="i"
+            :dataSource="item"
           />
         </div>
         <div class="banner">
-          <img src="./imgs/banner.jpg" alt="">
+          <img :src="banner.image" alt="">
         </div>
       </div>
       <div class="three">
@@ -26,13 +29,11 @@ export { default } from './model'
           <el-tab-pane label="最新视频" name="最新视频"></el-tab-pane>
         </el-tabs>
         <div class="videos">
-          <VideoItem />
-          <VideoItem />
-          <VideoItem />
-          <VideoItem />
-          <VideoItem />
-          <VideoItem />
-          <VideoItem />
+          <VideoItem
+            v-for="(item, index) of videos"
+            :key="index"
+            :dataSource="item"
+          />
         </div>
         <div class="btn">
           <a href="">
@@ -45,14 +46,11 @@ export { default } from './model'
           <el-tab-pane label="热门大牛" name="热门大牛"></el-tab-pane>
         </el-tabs>
         <div class="fourMain">
-          <DaNiuItem />
-          <DaNiuItem />
-          <DaNiuItem />
-          <DaNiuItem />
-          <DaNiuItem />
-          <DaNiuItem />
-          <DaNiuItem />
-          <DaNiuItem />
+          <DaNiuItem
+            v-for="(item, index) of teachers"
+            :key="index"
+            :dataSource="item"
+          />
         </div>
         <div class="btn">
           <a href="">

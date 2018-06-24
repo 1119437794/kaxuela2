@@ -1,18 +1,9 @@
 export default {
   name: 'DaNiuItem',
-  components: {
-  },
+  props: ['dataSource'],
   data () {
     return {
       fold: false
-    }
-  },
-  methods: {
-    onFoldChange () {
-      this.fold = true
-    },
-    onUnFoldChange () {
-      this.fold = false
     }
   }
 }

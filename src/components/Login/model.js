@@ -73,6 +73,7 @@ export default {
         password: this.formData.passWord
       })
       localStorage.setItem('token', res.data.token)
+      localStorage.setItem('username', this.formData.user)
       this.$router.push({
         path: '/'
       })

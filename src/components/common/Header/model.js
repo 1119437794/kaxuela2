@@ -1,6 +1,7 @@
 
 export default {
   name: 'Header',
+  props: ['username'],
   data () {
     return {
       navs: [

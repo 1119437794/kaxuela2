@@ -11,11 +11,15 @@ export { default } from './model'
     @mouseleave="onUnFoldChange"
   >
     <div class="unfold">
-      <h3 class="title">技术</h3>
+      <h3 class="title">{{dataSource.name}}</h3>
       <ul class="navs">
-        <li class="nav"><a href="">Java</a></li>
-        <li class="nav"><a href="">Java</a></li>
-        <li class="nav"><a href="">Java</a></li>
+        <li
+          class="nav"
+          v-for="(item, index) of dataSource.children"
+          :key="index"
+        >
+          <a href="">{{item.name}}</a>
+        </li>
       </ul>
       <i class="el-icon-arrow-right fold-icon"></i>
     </div>
@@ -23,30 +27,18 @@ export { default } from './model'
       :class="{ fold: true, show: fold}"
       v-if="fold"
     >
-      <div class="type">
-        <h3 class="subtitle">后端开发</h3>
+      <div
+        class="type"
+        v-for="(item0, index0) of secondOrder"
+        :key="index0"
+      >
+        <h3 class="subtitle">{{item0.name}}</h3>
         <ul class="navs">
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-        </ul>
-      </div>
-      <div class="type">
-        <h3 class="subtitle">后端开发</h3>
-        <ul class="navs">
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
-          <li class="nav"><a href="">Java</a></li>
+          <li
+            class="nav"
+            v-for="(item1, index1) of item1"
+            :key="index1"
+          ><a href="">{{item1.name}}</a></li>
         </ul>
       </div>
     </div>

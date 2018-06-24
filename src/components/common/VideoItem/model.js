@@ -1,5 +1,4 @@
 export default {
   name: 'VideoItem',
-  components: {
-  }
+  props: ['dataSource']
 }

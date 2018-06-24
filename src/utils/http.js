@@ -5,7 +5,7 @@ const vue = new Vue({})
 
 const methods = ['get', 'post', 'put', 'delete']
 
-const http = function ({ method = 'get', url, data }) {
+const http = function ({ method = 'get', url, data = {} }) {
   const token = localStorage.token
   return axios({
     method,
