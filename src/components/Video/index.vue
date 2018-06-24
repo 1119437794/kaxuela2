@@ -10,22 +10,31 @@ export { default } from './model'
   <Search />
   <div class="one">
     <div class="oneleft">
-      <img class="banner" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+      <img class="banner" :src="details.img" alt="">
       <img class="play" src="./imgs/play.png" alt="">
     </div>
     <div class="oneright">
-      <h3>JAVA写代码。。。</h3>
+      <h3>{{details.title}}</h3>
       <ul class="count">
         <li class="item">22人购买</li>
-        <li class="item">好评度100%</li>
+        <li class="item">好评度&nbsp;{{details.comment_good_per}}</li>
         <li class="item">
-          <img src="./imgs/collect.png" alt="">
+          <Icon
+            type="heart"
+            color="#96b4d0"
+            v-if="details.course_is_collect === 1"
+          ></Icon>
+          <Icon
+            type="heart"
+            v-if="details.course_is_collect === 0"
+          ></Icon>
+          &nbsp;
           收藏
         </li>
       </ul>
       <div class="price">
         <span class="num">
-          ¥288.00
+          ¥{{details.money}}
         </span>
         <span class="unit">学币</span>
       </div>
@@ -37,39 +46,54 @@ export { default } from './model'
       <div class="left-2">
         <el-tabs v-model="activeTab" @tab-click="handleClick">
           <el-tab-pane label="课程概述" name="课程概述">
-            <CourseDesc />
+            <CourseDesc
+              :dataSource="{
+                name: details.user.name,
+                remark: details.user.remark,
+                headimg: details.user.headimg,
+                intro: details.intro
+              }"
+            />
           </el-tab-pane>
           <el-tab-pane label="课程目录" name="课程目录">
-            <CourseDir />
+            <CourseDir :dataSource="details.content" />
           </el-tab-pane>
           <el-tab-pane label="评论" name="评论">
-            <Comment />
+            <Comment
+              :dataSource="{
+                comments: details.coursecomment,
+                goodPer: details.comment_good_per,
+                goodCount: details.good_comment_sum,
+                centerCount: details.centre_comment_sum,
+                diffCount: details.diff_comment_sum,
+              }"
+            />
           </el-tab-pane>
         </el-tabs>
       </div>
       <div class="right-2">
         <div class="info">
-          <img class="head" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+          <img class="head" :src="details.user.headimg" alt="">&emsp;
           <div class="user">
-            <span class="username">小小</span>
+            <span class="username">{{details.user.name}}</span>
             <img class="care" src="./imgs/care.png" alt="">
           </div>
         </div>
         <ul class="count-2">
             <li class="item-2">
               <span class="label">好评度</span>
-              <span>100%</span>
+              <span>{{details.user.comment_good_per}}</span>
             </li>
             <li class="item-2">
-              <span class="label">好评度</span>
-              <span>100%</span>
+              <span class="label">课程数</span>
+              <span>{{details.user.video_count}}</span>
             </li>
             <li class="item-2">
-              <span class="label">好评度</span>
-              <span>100%</span>
+              <span class="label">学习人数</span>
+              <span>{{details.user.comment_count}}</span>
             </li>
           </ul>
-          <p class="tag">课程数你奶奶家你奶奶家你奶奶家你几年级呢年你几年级你几年级呢</p>
+          <p class="tag">{{details.user.remark}}</p>
       </div>
     </div>
   </div>

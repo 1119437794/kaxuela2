@@ -1,7 +1,6 @@
 
 export default {
   name: 'Header',
-  props: ['username'],
   data () {
     return {
       navs: [
@@ -25,7 +24,8 @@ export default {
           path: '/recruit',
           name: '招聘'
         }
-      ]
+      ],
+      username: ''
     }
   },
   computed: {
@@ -38,5 +38,9 @@ export default {
       console.log(path)
       this.$router.push({ path })
     }
+  },
+  created () {
+    // 获取登录用户名
+    this.username = localStorage.getItem('username')
   }
 }

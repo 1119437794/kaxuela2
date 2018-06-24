@@ -11,7 +11,10 @@ export { default } from './model'
   <div class="root videoItem">
     <div class="a">
       <img src="./imgs/video.png" alt="">
-      <h3>{{dataSource.title}}</h3>
+      <h3 @click="gotoDetail">
+        {{dataSource.title}}
+        <!-- <router-link :to="'video?id='+dataSource.id">{{dataSource.title}}</router-link> -->
+      </h3>
     </div>
     <p class="b">{{dataSource.alias}}</p>
     <div class="tags">

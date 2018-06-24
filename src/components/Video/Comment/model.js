@@ -3,9 +3,5 @@ export default {
   components: {
     ...require('../../common')
   },
-  data () {
-    return {
-      aaa: 'Welcome to Your Vue.js App'
-    }
-  }
+  props: ['dataSource']
 }

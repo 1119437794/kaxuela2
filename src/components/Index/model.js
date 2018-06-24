@@ -8,7 +8,6 @@ export default {
   },
   data () {
     return {
-      username: '',
       category: [],
       banner: {},
       activeVideoType: '热门视频',
@@ -29,8 +28,6 @@ export default {
     }
   },
   async created () {
-    // 获取登录用户名
-    this.username = localStorage.getItem('username')
     // 课程分类列表
     const { data: category } = await http.post('/index/category')
     this.category = category
