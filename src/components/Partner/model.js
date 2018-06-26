@@ -12,5 +12,7 @@ export default {
     return {
       activeTab: '视频'
     }
+  },
+  async created () {
   }
 }

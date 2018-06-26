@@ -19,10 +19,10 @@ const http = function ({ method = 'get', url, data = {} }) {
     })
     .then(function (res) {
       const { code, msg } = res
-      if (code === '100002' || code === '1002') {
+      if (code === '10002' || code === '1002') {
         vue.$router.push('/login')
         throw new Error('授权过期')
-      } else if ((code === '100001' || code === '1001')) {
+      } else if ((code === '10001' || code === '1001')) {
         vue.$alert(msg, '提示', {
           confirmButtonText: '确定'
           // callback: action => {

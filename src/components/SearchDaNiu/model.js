@@ -1,11 +1,12 @@
 
 export default {
-  name: '找大牛',
+  name: 'SearchDaNiu',
   components: {
     ...require('../common')
   },
   data () {
     return {
+      teachers: [],
       swiperOption: {
         slidesPerView: 5,
         spaceBetween: 45,
@@ -22,5 +23,15 @@ export default {
         }
       }
     }
+  },
+  computed: {
+    superTeachers () {
+      return this.teachers.slice(0, 6)
+    }
+  },
+  async created () {
+    // 大牛列表
+    const teacherRes = await http.post('/index/teacher')
+    this.teachers = teacherRes.data.data
   }
 }

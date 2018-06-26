@@ -10,12 +10,16 @@ export { default } from './model'
     <div class="main">
       <div class="one">
         <img class="head-img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-        <h3 class="username">i 翱翔恒子</h3>
+        <h3 class="username">{{username}}</h3>
       </div>
-      <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="我的收藏" name="first"></el-tab-pane>
+      <el-tabs value="我的收藏">
+        <el-tab-pane label="我的收藏" name="我的收藏"></el-tab-pane>
       </el-tabs>
-      <ArticleItem />
+      <ArticleItem
+        v-for="(item, index) of collected"
+        :key="index"
+        :dataSource="item"
+      />
     </div>
     <Footer />
   </div>

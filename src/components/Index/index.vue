@@ -6,9 +6,7 @@ export { default } from './model'
 </script>
 <template>
   <div class="root">
-    <Header
-      :username="username"
-    />
+    <Header />
     <Search />
     <div class="main">
       <div class="two">
@@ -24,7 +22,7 @@ export { default } from './model'
         </div>
       </div>
       <div class="three">
-        <el-tabs v-model="activeVideoType" @tab-click="handleClick">
+        <el-tabs v-model="activeVideoType">
           <el-tab-pane label="热门视频" name="热门视频"></el-tab-pane>
           <el-tab-pane label="最新视频" name="最新视频"></el-tab-pane>
         </el-tabs>
@@ -42,7 +40,7 @@ export { default } from './model'
         </div>
       </div>
       <div class="four">
-        <el-tabs value="热门大牛" @tab-click="handleClick">
+        <el-tabs value="热门大牛">
           <el-tab-pane label="热门大牛" name="热门大牛"></el-tab-pane>
         </el-tabs>
         <div class="fourMain">

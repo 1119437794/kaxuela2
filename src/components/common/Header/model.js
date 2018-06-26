@@ -25,22 +25,22 @@ export default {
           name: '招聘'
         }
       ],
-      username: ''
-    }
-  },
-  computed: {
-    activeNav () {
-      return location.hash.replace('#', '')
+      username: '',
+      activeNav: '/'
     }
   },
   methods: {
     onNavChange (path) {
-      console.log(path)
+      this.activeNav = path
+      this.$router.push({ path })
+    },
+    goto (path) {
       this.$router.push({ path })
     }
   },
   created () {
     // 获取登录用户名
     this.username = localStorage.getItem('username')
+    this.activeNav = location.pathname.replace('#', '')
   }
 }

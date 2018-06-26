@@ -11,7 +11,7 @@ export { default } from './model'
       v-for="(item, index) of dataSource"
       :key="index"
     >
-      <img class="icon" :src="item.img" alt="">
+      <img class="icon" src="./imgs/video.png" alt="">
       <div>
         <span>【录播】</span>
         <span>{{item.title}}</span>

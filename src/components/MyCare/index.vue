@@ -10,52 +10,30 @@ export { default } from './model'
     <div class="main">
       <div class="one">
         <img class="head-img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-        <h3 class="username">i 翱翔恒子</h3>
+        <h3 class="username">{{username}}</h3>
       </div>
-      <el-tabs value="我的关注" @tab-click="handleClick">
+      <el-tabs value="我的关注" >
         <el-tab-pane label="我的关注" name="我的关注"></el-tab-pane>
       </el-tabs>
-      <div class="item">
-        <img class="item-img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+      <div
+        class="item"
+        v-for="(item, index) of cared"
+        :key="index"
+      >
+        <img class="item-img" :src="item.puser.headimg" alt="">
         <div class="item-main">
           <div class="item-info">
-            小侄子
+            {{item.puser.name}}
           </div>
           <ul class="item-desc">
-            <li>视频&nbsp;3&emsp;|</li>
-            <li>&emsp;文章&nbsp;3&emsp;|</li>
-            <li>&emsp;粉丝&nbsp;3</li>
+            <li>视频&nbsp;{{item.puser.video_count}}&emsp;|</li>
+            <li>&emsp;文章&nbsp;{{item.puser.article_count}}&emsp;|</li>
+            <li>&emsp;粉丝&nbsp;{{item.puser.user_attention}}</li>
           </ul>
         </div>
-        <el-button class="care" type="primary" round>+关注</el-button>
-      </div>
-      <div class="item">
-        <img class="item-img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-        <div class="item-main">
-          <div class="item-info">
-            小侄子
-          </div>
-          <ul class="item-desc">
-            <li>视频&nbsp;3&emsp;|</li>
-            <li>&emsp;文章&nbsp;3&emsp;|</li>
-            <li>&emsp;粉丝&nbsp;3</li>
-          </ul>
-        </div>
-        <el-button class="care" type="primary" round>+关注</el-button>
-      </div>
-      <div class="item">
-        <img class="item-img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-        <div class="item-main">
-          <div class="item-info">
-            小侄子
-          </div>
-          <ul class="item-desc">
-            <li>视频&nbsp;3&emsp;|</li>
-            <li>&emsp;文章&nbsp;3&emsp;|</li>
-            <li>&emsp;粉丝&nbsp;3</li>
-          </ul>
-        </div>
-        <el-button class="care" type="primary" round>+关注</el-button>
+        <el-button class="care" type="primary" round @click="() => attention(item.puser)">
+          {{item.puser.is_attention ? '取消关注' : '+关注'}}
+        </el-button>
       </div>
     </div>
     <Footer />

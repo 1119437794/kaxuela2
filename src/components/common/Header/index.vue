@@ -25,15 +25,16 @@ export { default } from './model'
             <el-dropdown
               size="small"
               placement="bottom-start"
+              @command="goto"
             >
               <span class="el-dropdown-link user">
                 {{username}}<i class="el-icon-arrow-down el-icon--right"></i>
               </span>
-              <el-dropdown-menu slot="dropdown">
+              <el-dropdown-menu slot="dropdown" >
                 <el-dropdown-item>基础信息</el-dropdown-item>
-                <el-dropdown-item>全部订单</el-dropdown-item>
-                <el-dropdown-item>我的关注</el-dropdown-item>
-                <el-dropdown-item>我的收藏</el-dropdown-item>
+                <el-dropdown-item command="order">全部订单</el-dropdown-item>
+                <el-dropdown-item command="myCare">我的关注</el-dropdown-item>
+                <el-dropdown-item command="myCollect">我的收藏</el-dropdown-item>
                 <el-dropdown-item>退出</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>

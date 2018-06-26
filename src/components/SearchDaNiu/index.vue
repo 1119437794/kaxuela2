@@ -12,35 +12,14 @@ export { default } from './model'
       <swiper
         class="main card"
         :options="swiperOption">
-          <swiper-slide class="slide">
-            <img class="thumb" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <span class="text">消证字</span>
-            <span class="text">且屠宰</span>
-          </swiper-slide>
-         <swiper-slide class="slide">
-            <img class="thumb" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <span class="text">消证字</span>
-            <span class="text">且屠宰</span>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <img class="thumb" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <span class="text">消证字</span>
-            <span class="text">且屠宰</span>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <img class="thumb" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <span class="text">消证字</span>
-            <span class="text">且屠宰</span>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <img class="thumb" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <span class="text">消证字</span>
-            <span class="text">且屠宰</span>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <img class="thumb" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <span class="text">消证字</span>
-            <span class="text">且屠宰</span>
+          <swiper-slide
+            class="slide"
+            v-for="(item, index) of superTeachers"
+            :key="index"
+          >
+            <img class="thumb" :src="item.headimg" alt="">
+            <span class="text">{{item.name}}</span>
+            <span class="text">{{item.good}}</span>
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
           <div class="swiper-button-prev" slot="button-prev"></div>
@@ -49,21 +28,18 @@ export { default } from './model'
     </div>
     <Search />
     <div class="main box">
-     <DaNiuItem />
-     <DaNiuItem />
-     <DaNiuItem />
-     <DaNiuItem />
-     <DaNiuItem />
-     <DaNiuItem />
-     <DaNiuItem />
-     <DaNiuItem />
+     <DaNiuItem
+        v-for="(item, index) of teachers"
+        :key="index"
+        :dataSource="item"
+      />
     </div>
-    <el-pagination
+    <!-- <el-pagination
       class="pagination"
       background
       layout="prev, pager, next"
       :total="1000">
-    </el-pagination>
+    </el-pagination> -->
     <Footer />
   </div>
 </template>

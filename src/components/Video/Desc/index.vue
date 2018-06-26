@@ -17,13 +17,13 @@ export { default } from './model'
       </div>
     </div>
     <div class="intro">
-      <div class="intro-label">简介</div>
+      <div class="intro-label">简&emsp;介</div>&emsp;
       <div class="intro-text">
         {{dataSource.intro}}
       </div>
     </div>
     <div class="banner">
-      <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+      <!-- <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt=""> -->
     </div>
   </div>
 

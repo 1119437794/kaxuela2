@@ -9,19 +9,18 @@ export { default } from './model'
     <Header />
     <Search />
     <div class="main">
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
-      <VideoItem />
+      <VideoItem
+        v-for="(item, index) of videos"
+        :key="index"
+        :dataSource="item"
+      />
     </div>
-    <el-pagination
+    <!-- <el-pagination
       class="pagination"
       background
       layout="prev, pager, next"
       :total="1000">
-    </el-pagination>
+    </el-pagination> -->
     <Footer />
   </div>
 </template>

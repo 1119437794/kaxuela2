@@ -11,14 +11,27 @@ export { default } from './model'
   <div class="one">
     <div class="oneleft">
       <img class="banner" :src="details.img" alt="">
-      <img class="play" src="./imgs/play.png" alt="">
+      <div class="play">
+        <div class="play-border">
+          <Icon
+            type="ios-play"
+            size="40"
+            color="#fff"
+          />
+        </div>
+        <br/>
+        <span>试听</span>
+      </div>
     </div>
     <div class="oneright">
       <h3>{{details.title}}</h3>
       <ul class="count">
-        <li class="item">22人购买</li>
+        <li class="item">{{details.comment_good_per}}人购买</li>
         <li class="item">好评度&nbsp;{{details.comment_good_per}}</li>
-        <li class="item">
+        <li
+          class="item collect"
+          @click="collect"
+        >
           <Icon
             type="heart"
             color="#96b4d0"
@@ -38,7 +51,10 @@ export { default } from './model'
         </span>
         <span class="unit">学币</span>
       </div>
-      <button class="buy">立即购买</button>
+      <button
+        class="buy"
+        @click="gotoPay"
+      >立即购买</button>
     </div>
   </div>
   <div class="wrap">
@@ -76,7 +92,16 @@ export { default } from './model'
           <img class="head" :src="details.user.headimg" alt="">&emsp;
           <div class="user">
             <span class="username">{{details.user.name}}</span>
-            <img class="care" src="./imgs/care.png" alt="">
+            <el-button
+              class="care"
+              type="primary"
+              round
+              @click="() => attention(details.user.is_attention)"
+            >
+              {{
+                details.user.is_attention ? '取消关注' : '+关注'
+              }}
+            </el-button>
           </div>
         </div>
         <ul class="count-2">
