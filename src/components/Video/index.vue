@@ -60,13 +60,13 @@ export { default } from './model'
   <div class="wrap">
     <div class="two">
       <div class="left-2">
-        <el-tabs v-model="activeTab" @tab-click="handleClick">
+        <el-tabs v-model="activeTab">
           <el-tab-pane label="课程概述" name="课程概述">
             <CourseDesc
               :dataSource="{
-                name: details.user.name,
-                remark: details.user.remark,
-                headimg: details.user.headimg,
+                name: details.user && details.user.name,
+                remark: details.user && details.user.remark,
+                headimg: details.user && details.user.headimg,
                 intro: details.intro
               }"
             />
@@ -89,17 +89,17 @@ export { default } from './model'
       </div>
       <div class="right-2">
         <div class="info">
-          <img class="head" :src="details.user.headimg" alt="">&emsp;
+          <img class="head" :src="details.user && details.user.headimg" alt="">&emsp;
           <div class="user">
-            <span class="username">{{details.user.name}}</span>
+            <span class="username">{{details.user && details.user.name}}</span>
             <el-button
               class="care"
               type="primary"
               round
-              @click="() => attention(details.user.is_attention)"
+              @click="() => attention(details.user && details.user.is_attention)"
             >
               {{
-                details.user.is_attention ? '取消关注' : '+关注'
+                details.user && details.user.is_attention ? '取消关注' : '+关注'
               }}
             </el-button>
           </div>
@@ -107,18 +107,18 @@ export { default } from './model'
         <ul class="count-2">
             <li class="item-2">
               <span class="label">好评度</span>
-              <span>{{details.user.comment_good_per}}</span>
+              <span>{{details.user && details.user.comment_good_per}}</span>
             </li>
             <li class="item-2">
               <span class="label">课程数</span>
-              <span>{{details.user.video_count}}</span>
+              <span>{{details.user && details.user.video_count}}</span>
             </li>
             <li class="item-2">
               <span class="label">学习人数</span>
-              <span>{{details.user.comment_count}}</span>
+              <span>{{details.user && details.user.comment_count}}</span>
             </li>
           </ul>
-          <p class="tag">{{details.user.remark}}</p>
+          <p class="tag">{{details.user && details.user.remark}}</p>
       </div>
     </div>
   </div>

@@ -10,7 +10,11 @@ export { default } from './model'
     <Search />
     <div class="main">
       <div class="left">
-        <ArticleItem />
+        <ArticleItem
+          v-for="(item, index) of article"
+          :key="index"
+          :dataSource="item"
+        />
       </div>
       <div class="right">
         <div class="right-header">
@@ -58,12 +62,12 @@ export { default } from './model'
         </div>
       </div>
     </div>
-    <el-pagination
+    <!-- <el-pagination
       class="pagination"
       background
       layout="prev, pager, next"
       :total="1000">
-    </el-pagination>
+    </el-pagination> -->
     <Footer />
   </div>
 </template>

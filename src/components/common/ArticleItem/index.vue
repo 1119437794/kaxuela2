@@ -15,12 +15,12 @@ export { default } from './model'
           <div class="name">{{dataSource.puser.name}}</div>
           <div class="datetime">{{dataSource.updated_at}}</div>
         </div>
-        <!-- <div class="title">
+        <div class="title">
           {{dataSource.news && dataSource.news.title}}
         </div>
         <div class="content">
           {{dataSource.news && dataSource.news.content}}
-        </div> -->
+        </div>
         <ul class="count">
           <li class="num">
             <Icon type="eye" size="18"/>&nbsp;{{dataSource.puser.video_count}}
@@ -34,7 +34,7 @@ export { default } from './model'
         </ul>
       </div>
       <div class="right">
-        <img class="thumb" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+        <img class="thumb" :src="dataSource.img" alt="">
       </div>
     </div>
   </div>
