@@ -7,10 +7,11 @@ const methods = ['get', 'post', 'put', 'delete']
 
 const http = function ({ method = 'get', url, data = {} }) {
   const token = localStorage.token
+  const dataStyle = method === 'get' ? 'params' : 'data'
   return axios({
     method,
     url,
-    data: Object.assign(data, token && { token }),
+    [dataStyle]: Object.assign(data, token && { token }),
     baseURL: 'http://118.24.77.192/'
   })
     .then(function ({ data }) {

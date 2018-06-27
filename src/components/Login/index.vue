@@ -18,11 +18,11 @@ export { default } from './model'
           <ul class="form_head clearfix">
             <li
               :class="{active: tabPanel==='passwordLogin'}"
-              @click="switchTab('passwordLogin')"
+              @click="switchMyTab('passwordLogin')"
             > 密码登录 </li>
             <li
               :class="{active: tabPanel==='codeLogin'}"
-              @click="switchTab('codeLogin')"
+              @click="switchMyTab('codeLogin')"
             > 验证码登录 </li>
           </ul>
           <span class="tab_active" :class="{right_active: tabPanel==='codeLogin'}"></span>
@@ -86,7 +86,9 @@ export { default } from './model'
                 placeholder="请证明你不是机器人"
                 v-model="formCode.vCode"
                 auto-complete="off"
-              ></el-input>
+              >
+                <img :src="`data:image/jpeg;base64${imgCode}`" slot="append" alt="">
+              </el-input>
             </el-form-item>
             <el-form-item prop="verificationCode">
               <el-input

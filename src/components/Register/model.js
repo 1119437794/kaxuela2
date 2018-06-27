@@ -73,6 +73,9 @@ export default {
           return false
         }
       })
+    },
+    getImageSuccess (res, file) {
+      this.registerForm.imageUrl = URL.createObjectURL(file.raw)
     }
   },
   components: {

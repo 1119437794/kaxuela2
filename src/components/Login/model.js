@@ -12,12 +12,13 @@ export default {
         vCode: '',
         verificationCode: ''
       },
+      imgCode: '',
       dataRules: {
         user: [
-          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
+          { required: true, message: '请输入用户名', trigger: 'blur' }
         ],
         passWord: [
-          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
+          { required: true, message: '请输入密码', trigger: 'blur' }
         ]
       },
       codeRules: {
@@ -25,16 +26,19 @@ export default {
           { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
         ],
         vCode: [
-          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
+          { required: true, message: '请输入验证码', trigger: 'blur' }
         ],
         verificationCode: [
-          { required: true, message: '请输入已验证手机/邮箱', trigger: 'blur' }
+          { required: true, message: '请输入手机验证码', trigger: 'blur' }
         ]
       }
     }
   },
+  mounted () {
+    this.getImageCode()
+  },
   methods: {
-    switchTab: function (tabName) {
+    switchMyTab: function (tabName) {
       this.tabPanel = tabName
     },
     submitForm: function (formName) {
@@ -57,6 +61,14 @@ export default {
           return false
         }
       })
+    },
+
+    async getImageCode () {
+      const res = await http.get('/public/code', {
+        codetoken: 1245
+      })
+      console.log(res)
+      this.imgCode = res
     },
 
     async codeSubmit () {

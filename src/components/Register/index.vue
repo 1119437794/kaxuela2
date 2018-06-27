@@ -36,9 +36,11 @@ export { default } from './model'
             action="http://118.24.77.192/public/upload/img"
             class="avatar-uploader"
             :show-file-list="false"
+            :on-success="getImageSuccess"
             :on-preview="beforeAvatarUpload">
             <img v-if="registerForm.imageUrl" :src="registerForm.imageUrl" class="avatar">
-            <i v-else class="el-icon-upload2 avatar-uploader-icon"></i>
+            <i v-else class="el-icon-upload2
+             avatar-uploader-icon"></i>
             <div slot="tip" class="el-upload__tip avater-upload-tip">
               建议使用真实头像提升真实性、专业性
               支持jpg、jpeg、gif、png,小于10MB
