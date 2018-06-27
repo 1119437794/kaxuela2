@@ -12,7 +12,6 @@ export default {
         vCode: '',
         verificationCode: ''
       },
-      imgCode: '',
       dataRules: {
         user: [
           { required: true, message: '请输入用户名', trigger: 'blur' }
@@ -34,8 +33,11 @@ export default {
       }
     }
   },
-  mounted () {
-    this.getImageCode()
+  computed: {
+    imgCode () {
+      const baseUrl = process.env.NODE_ENV === 'development' ? 'http://118.24.77.192' : ''
+      return `${baseUrl}/public/code?codetoken=1245&token=${window.localStorage.token}`
+    }
   },
   methods: {
     switchMyTab: function (tabName) {
@@ -62,15 +64,6 @@ export default {
         }
       })
     },
-
-    async getImageCode () {
-      const res = await http.get('/public/code', {
-        codetoken: 1245
-      })
-      console.log(res)
-      this.imgCode = res
-    },
-
     async codeSubmit () {
       const res = await http.post('/auth/codelogin', {
         phone: this.formData.phoneNumber,

@@ -87,7 +87,7 @@ export { default } from './model'
                 v-model="formCode.vCode"
                 auto-complete="off"
               >
-                <img :src="`data:image/jpeg;base64${imgCode}`" slot="append" alt="">
+                <img :src="imgCode" slot="append" alt="">
               </el-input>
             </el-form-item>
             <el-form-item prop="verificationCode">
