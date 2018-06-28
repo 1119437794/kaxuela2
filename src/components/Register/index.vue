@@ -100,12 +100,20 @@ export { default } from './model'
             v-model="registerPhoneForm.phone"
           ></el-input>
         </el-form-item>
+        <el-form-item prop="vCode">
+          <el-input
+            placeholder="请证明你不是机器人"
+            v-model="registerPhoneForm.vCode"
+          >
+            <img style="height: 35px" :src="imgCode" slot="append" alt="">
+          </el-input>
+        </el-form-item>
         <el-form-item prop="verificateCode">
           <el-input
             placeholder="请输入验证码"
             v-model="registerPhoneForm.verificateCode"
           >
-            <span slot="append">获取验证码</span>
+            <el-button slot="append" @click="sendCodeToPhone">获取验证码</el-button>
           </el-input>
         </el-form-item>
         <el-form-item class="submit">

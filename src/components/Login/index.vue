@@ -67,7 +67,6 @@ export { default } from './model'
         <div class="form_body" data-view="codeLogin" v-show="tabPanel==='codeLogin'">
           <el-form
             :model="formCode"
-            status-icon
             ref="formCode"
             class="demo-ruleForm"
             :rules="codeRules"
@@ -85,9 +84,8 @@ export { default } from './model'
                 class="line-input"
                 placeholder="请证明你不是机器人"
                 v-model="formCode.vCode"
-                auto-complete="off"
               >
-                <img :src="imgCode" slot="append" alt="">
+                <img style="height: 35px" :src="imgCode" slot="append" alt="">
               </el-input>
             </el-form-item>
             <el-form-item prop="verificationCode">
@@ -95,9 +93,8 @@ export { default } from './model'
                 class="line-input"
                 placeholder="请输入验证码"
                 v-model="formCode.verificationCode"
-                auto-complete="off"
               >
-                <el-button slot="append">获取验证码</el-button>
+                <el-button slot="append" @click="sendCodeToPhone">获取验证码</el-button>
               </el-input>
             </el-form-item>
             <el-form-item>

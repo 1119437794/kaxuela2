@@ -30,13 +30,14 @@ export default {
         verificationCode: [
           { required: true, message: '请输入手机验证码', trigger: 'blur' }
         ]
-      }
+      },
+      codeRendomData: 1243
     }
   },
   computed: {
     imgCode () {
       const baseUrl = process.env.NODE_ENV === 'development' ? 'http://118.24.77.192' : ''
-      return `${baseUrl}/public/code?codetoken=1245&token=${window.localStorage.token}`
+      return `${baseUrl}/public/code?codetoken=${this.codeRendomData}&token=${window.localStorage.token}`
     }
   },
   methods: {
@@ -44,7 +45,6 @@ export default {
       this.tabPanel = tabName
     },
     submitForm: function (formName) {
-      console.log(formName)
       this.$refs[formName].validate((valid) => {
         if (valid) {
           this.formSubmit()
@@ -66,10 +66,17 @@ export default {
     },
     async codeSubmit () {
       const res = await http.post('/auth/codelogin', {
-        phone: this.formData.phoneNumber,
-        code: this.formData.vCode
+        phone: this.formCode.phoneNumber,
+        code: this.formCode.verificationCode
       })
-      console.log(res)
+      if (res.status === 1) {
+        localStorage.setItem('token', res.data.token)
+        this.$router.push({
+          path: '/'
+        })
+      } else {
+        this.$message.error(res.msg)
+      }
     },
 
     async formSubmit () {
@@ -82,6 +89,23 @@ export default {
       this.$router.push({
         path: '/'
       })
+    },
+
+    async sendCodeToPhone () {
+      const res = await http.post('/auth/sendcode', {
+        phone: this.formCode.phoneNumber,
+        piccode: this.formCode.vCode,
+        codetoken: this.codeRendomData
+      })
+      if (res.status !== 1) {
+        this.codeRendomData = this.getRandomData()
+        this.$message.error(res.msg)
+      }
+    },
+
+    getRandomData () {
+      return Math.floor(Math.random() * 10000)
     }
+
   }
 }

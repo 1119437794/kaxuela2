@@ -6,6 +6,7 @@ export default {
   data () {
     return {
       registerType: 1,
+      codeRendomData: 1243,
       registerForm: {
         imageUrl: '',
         nickname: '',
@@ -16,6 +17,7 @@ export default {
       },
       registerPhoneForm: {
         phone: '',
+        vCode: '',
         verificateCode: ''
       },
       rules: {
@@ -39,6 +41,12 @@ export default {
         ]
       },
       phoneRules: {}
+    }
+  },
+  computed: {
+    imgCode () {
+      const baseUrl = process.env.NODE_ENV === 'development' ? 'http://118.24.77.192' : ''
+      return `${baseUrl}/public/code?codetoken=${this.codeRendomData}&token=${window.localStorage.token}`
     }
   },
   methods: {
@@ -76,22 +84,41 @@ export default {
     },
     getImageSuccess (res, file) {
       this.registerForm.imageUrl = URL.createObjectURL(file.raw)
+    },
+    async sendCodeToPhone () {
+      const res = await http.post('/auth/sendcode', {
+        phone: this.registerPhoneForm.phone,
+        piccode: this.registerPhoneForm.vCode,
+        codetoken: this.codeRendomData
+      })
+      if (res.status !== 1) {
+        this.codeRendomData = this.getRandomData()
+        this.$message.error(res.msg)
+      }
+    },
+    async created () {
+      const res = await http.post('/auth/register', {
+        phone: this.registerPhoneForm.phone,
+        code: this.registerPhoneForm.verificateCode,
+        username: this.registerForm.name,
+        password: this.registerForm.password,
+        nickname: this.registerForm.nickname,
+        good: this.registerForm.goodAt,
+        headimg: this.registerForm.imageUrl,
+        type: 1
+      })
+      if (res.status === 1) {
+        this.$message.success(res.msg)
+        this.$router.push({
+          path: '/login'
+        })
+      }
+    },
+    getRandomData () {
+      return Math.floor(Math.random() * 10000)
     }
   },
   components: {
     Footer
-  },
-  async created () {
-    const res = await http.post('/auth/register', {
-      phone: this.registerPhoneForm.phone,
-      code: this.registerPhoneForm.code,
-      username: this.registerForm.name,
-      password: this.registerForm.password,
-      nickname: this.registerForm.nickname,
-      good: this.registerForm.goodAt,
-      headimg: this.registerForm.imageUrl,
-      type: 1
-    })
-    console.log(res, '此处只管处理正确的时候的逻辑，其他逻辑都被拦截处理了')
   }
 }
