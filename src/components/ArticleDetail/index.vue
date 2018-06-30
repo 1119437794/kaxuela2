@@ -17,8 +17,8 @@ export { default } from './model'
           <li class="num">
             <Icon type="chatbox" size="18"></Icon>&nbsp;33
           </li>
-          <li class="num">
-            <Icon type="heart" size="18"></Icon>&nbsp;33
+          <li class="num" @click="collectArticle" style="cursor: pointer">
+            <Icon type="heart" size="18" ></Icon>&nbsp;33
           </li>
         </ul>
         <p class="content">
@@ -49,9 +49,10 @@ export { default } from './model'
         <div class="comment">
           <div class="input">
             <img class="head" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <div contenteditable class="text" >
+            &emsp;
+            <div :contenteditable="isLogin" class="text" >
               写下你的评论
-              <div class="unlogin">
+              <div class="unlogin" v-if="!isLogin">
                 <el-button class="right-lg-btn" round>&nbsp;登录&nbsp;</el-button>
                 &emsp;<span>后查看更多</span>
               </div>
@@ -105,7 +106,7 @@ export { default } from './model'
           <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
           <div class="right-1-info">
             <span class="right-1-name">小橙子</span>&emsp;
-            <el-button class="right-sl-btn" round>+关注</el-button>
+            <el-button class="right-sl-btn" round @click="collectTeacher">+关注</el-button>
           </div>
           <div class="right-1-late">最近更新：20180808 14:00</div>
           <div class="right-1-desc">简介：20180808 14:00</div>
@@ -184,20 +185,13 @@ export { default } from './model'
             <el-button class="right-sl-btn" round>更多&nbsp;></el-button>
           </div>
           <ul>
-            <li class="right-3-item">
+            <li
+              class="right-3-item"
+              v-for="(item, index) of lists"
+              :key="index"
+            >
               <Icon type="document"></Icon>
-              <span>JAVA从入门到ss</span>
-            </li>
-            <li class="right-3-item">
-              <Icon type="document"></Icon>
-              <span>JAVA从入门到ss</span>
-            </li>
-            <li class="right-3-item">
-              <Icon type="document"></Icon>
-              <span>JAVA从入门到ss</span>
-            </li><li class="right-3-item">
-              <Icon type="document"></Icon>
-              <span>JAVA从入门到ss</span>
+              <span>{{item.title}}</span>
             </li>
           </ul>
         </div>

@@ -7,11 +7,12 @@ export default {
   data () {
     return {
       radio: '0',
-      comments: this.dataSource.comments
+      comments: []
     }
   },
   methods: {
     selectComments () {
+      // debugger
       if (this.radio === '0') {
         this.comments = this.dataSource.comments
       } else if (this.radio === '1') {
@@ -24,6 +25,11 @@ export default {
         // 好评
         this.comments = this.dataSource.comments.filter(({ level }) => level < 3)
       }
+    }
+  },
+  watch: {
+    dataSource () {
+      this.comments = this.dataSource.comments
     }
   }
 }

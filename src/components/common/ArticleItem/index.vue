@@ -15,7 +15,7 @@ export { default } from './model'
           <div class="name">{{dataSource.puser.name}}</div>
           <div class="datetime">{{dataSource.updated_at}}</div>
         </div>
-        <div class="title">
+        <div class="title" @click="gotoDetail">
           {{dataSource.news && dataSource.news.title}}
         </div>
         <div class="content">

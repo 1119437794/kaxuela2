@@ -5,5 +5,10 @@ export default {
     return {
       fold: false
     }
+  },
+  methods: {
+    gotoDetail () {
+      this.$router.push({ path: `/partner?id=${this.dataSource.id}` })
+    }
   }
 }

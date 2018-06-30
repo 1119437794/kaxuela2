@@ -7,8 +7,13 @@ export { default } from './model'
 <template>
   <div class="daniu">
     <div class="one">
-      <img class="img" :src="dataSource.headimg" alt="">
-      <div class="user">
+      <img
+        class="img"
+        :src="dataSource.headimg"
+        alt=""
+        @click="gotoDetail"
+      >
+      <div class="user" @click="gotoDetail">
         <span class="name">{{dataSource.name}}</span>
         <span class="job">{{dataSource.good}}</span>
       </div>
