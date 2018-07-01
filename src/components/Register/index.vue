@@ -33,7 +33,7 @@ export { default } from './model'
       >
         <el-form-item label="头像" prop="headPortrait">
           <el-upload
-            action="http://118.24.77.192/public/upload/img"
+            action="http://118.24.77.192:8080/public/upload/img"
             class="avatar-uploader"
             :show-file-list="false"
             :on-success="getImageSuccess"

@@ -12,17 +12,23 @@ const http = function ({ method = 'get', url, data = {} }) {
     method,
     url,
     [dataStyle]: Object.assign(data, token && { token }),
-    baseURL: 'http://118.24.77.192/'
+    baseURL: 'http://118.24.77.192:8080/'
   })
     .then(function ({ data }) {
       return data
     })
     .then(function (res) {
       const { code, msg } = res
-      if (code === '10002' || code === '1002') {
-        vue.$router.push('/login')
+      if (code === '100002' || code === '10002' || code === '1002') {
+        // vue.$router.push({ path: '/login' })
+        location.href = '/login'
         throw new Error('授权过期')
-      } else if ((code === '10001' || code === '1001')) {
+      } else if ((code === '100001' || code === '10001' || code === '1001')) {
+        if (msg === 'token必须填写') {
+          // vue.$router.push({ path: '/login' })
+          location.href = '/login'
+          throw new Error('没有登录')
+        }
         vue.$alert(msg, '提示', {
           confirmButtonText: '确定'
           // callback: action => {
