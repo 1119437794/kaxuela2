@@ -11,16 +11,16 @@ export { default } from './model'
   <div class="root">
     <div class="quick">
       <div class="q-main">
-        <a class="left" href="">[大牛应聘申请]</a>
+        <router-link class="left" to="register?type=2">[大牛应聘申请]</router-link>
         <ul class="right">
           <li>
-            <a href="">
+            <a href="/order">
               <img
                 class="img"
-                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+                :src="userinfo.head_img" alt="">
             </a>
           </li>
-          <li class="msg"><a href="">消息</a></li>
+          <!-- <li class="msg"><a href="">消息</a></li> -->
           <li v-if="username">
             <el-dropdown
               size="small"
@@ -31,11 +31,11 @@ export { default } from './model'
                 {{username}}<i class="el-icon-arrow-down el-icon--right"></i>
               </span>
               <el-dropdown-menu slot="dropdown" >
-                <el-dropdown-item>基础信息</el-dropdown-item>
+                <!-- <el-dropdown-item>基础信息</el-dropdown-item> -->
                 <el-dropdown-item command="order">全部订单</el-dropdown-item>
                 <el-dropdown-item command="myCare">我的关注</el-dropdown-item>
                 <el-dropdown-item command="myCollect">我的收藏</el-dropdown-item>
-                <el-dropdown-item>退出</el-dropdown-item>
+                <el-dropdown-item command="exit">退出</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </li>

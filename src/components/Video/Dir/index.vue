@@ -10,6 +10,7 @@ export { default } from './model'
       class="item"
       v-for="(item, index) of dataSource"
       :key="index"
+      @click="() => gotoPaly(item)"
     >
       <img class="icon" src="./imgs/video.png" alt="">
       <div>

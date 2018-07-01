@@ -3,5 +3,10 @@ export default {
   components: {
     ...require('../../common')
   },
-  props: ['dataSource']
+  props: ['dataSource'],
+  methods: {
+    gotoPaly (item) {
+      this.$router.push({ path: `/play?id=${item.id}` })
+    }
+  }
 }

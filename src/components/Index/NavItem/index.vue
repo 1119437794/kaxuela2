@@ -18,7 +18,7 @@ export { default } from './model'
           v-for="(item, index) of dataSource.children"
           :key="index"
         >
-          <a href="">{{item.name}}</a>
+          <router-link :to="`/video?id=${item.id}`">{{item.name}}</router-link>
         </li>
       </ul>
       <i class="el-icon-arrow-right fold-icon"></i>
@@ -36,9 +36,11 @@ export { default } from './model'
         <ul class="navs">
           <li
             class="nav"
-            v-for="(item1, index1) of item1"
+            v-for="(item1, index1) of item0"
             :key="index1"
-          ><a href="">{{item1.name}}</a></li>
+          >
+            <router-link :to="`/video?id=${item1.id}`">{{item1.name}}</router-link>
+          </li>
         </ul>
       </div>
     </div>

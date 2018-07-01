@@ -10,15 +10,18 @@ export default {
   },
   data () {
     return {
-      details: {},
+      details: {
+        course: [],
+        news: []
+      },
       activeTab: '视频'
     }
   },
   async created () {
-    // TODO:
     const { id } = this.$route.query
     if (id === undefined) return this.$router.back()
     const { data: details } = await http.post('/teacher/details', { teacher_id: id })
+    details.news = details.news.map(item => ({ puser: item }))
     this.details = details
   }
 }

@@ -16,10 +16,11 @@ export { default } from './model'
             class="slide"
             v-for="(item, index) of superTeachers"
             :key="index"
+            :data-id="item.id"
           >
-            <img class="thumb" :src="item.headimg" alt="">
-            <span class="text">{{item.name}}</span>
-            <span class="text">{{item.good}}</span>
+            <img class="thumb" :data-id="item.id" :src="item.headimg" alt="">
+            <span class="text" :data-id="item.id" >{{item.name}}</span>
+            <span class="text" :data-id="item.id" >{{item.good}}</span>
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
           <div class="swiper-button-prev" slot="button-prev"></div>

@@ -12,48 +12,55 @@ export { default } from './model'
     <div class="main">
       <div class="one">
         <div class="one-left">
-          <img class="head" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+          <img class="head" :src="details.headimg" alt="">
+          &emsp;
           <div class="info">
-            <span class="name">xiaochengzi</span>
+            <span class="name">{{details.name}}</span>
             <ul class="count">
               <li class="item">
-                <span >55</span>
+                <span >{{details.video_count}}</span>
                 <span class="label">视频&nbsp;></span>
               </li>
               <li class="item">
-                <span >55</span>
+                <span >{{details.article_count}}</span>
                 <span class="label">文章&nbsp;></span>
               </li>
               <li class="item">
-                <span >55</span>
+                <span >{{details.user_attention}}</span>
                 <span class="label">粉丝&nbsp;></span>
               </li>
               <li class="item">
-                <span >55</span>
+                <span >{{details.word_count}}</span>
                 <span class="label">字数</span>
               </li>
-              <li class="item">
+              <!-- <li class="item">
                 <span >55</span>
                 <span class="label">收获喜欢</span>
-              </li>
+              </li> -->
             </ul>
           </div>
-          <el-button class="care" type="primary" round>+关注</el-button>
+          <el-button class="care" type="primary" round>
+            {{details.is_attention ? '取消关注' : '+关注'}}
+          </el-button>
         </div>
         <div class="one-right">
           <div class="intro">个人介绍</div><br />
-          <div class="tag">90后 无所自在</div>
+          <div class="tag">{{details.remark}}</div>
         </div>
       </div>
-      <el-tabs v-model="activeTab" @tab-click="handleClick">
+      <el-tabs v-model="activeTab">
           <el-tab-pane label="视频" name="视频">
-            <Video />
+            <Video :dataSource="details.course" />
           </el-tab-pane>
-          <el-tab-pane label="辅导课程" name="辅导课程">
+          <!-- <el-tab-pane label="辅导课程" name="辅导课程">
             <Course />
-          </el-tab-pane>
+          </el-tab-pane> -->
           <el-tab-pane label="文章" name="文章">
-            <ArticleItem />
+            <ArticleItem
+              v-for="(item, index) of details.news"
+              :key="index"
+              :dataSource="item"
+            />
           </el-tab-pane>
         </el-tabs>
     </div>

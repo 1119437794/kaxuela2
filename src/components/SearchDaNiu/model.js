@@ -20,6 +20,12 @@ export default {
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
+        },
+        on: {
+          click: (e) => {
+            const id = e.target.getAttribute('data-id')
+            this.$router.push({path: `/partner?id=${id}`})
+          }
         }
       }
     }

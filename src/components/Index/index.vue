@@ -18,7 +18,9 @@ export { default } from './model'
           />
         </div>
         <div class="banner">
-          <img :src="banner.image" alt="">
+          <router-link :to="`/video?id=${banner.id}`">
+            <img :src="banner.image" alt="">
+          </router-link>
         </div>
       </div>
       <div class="three">
@@ -33,11 +35,11 @@ export { default } from './model'
             :dataSource="item"
           />
         </div>
-        <div class="btn">
+        <!-- <div class="btn">
           <a href="">
             <img src="./imgs/btn.png" alt="">
           </a>
-        </div>
+        </div> -->
       </div>
       <div class="four">
         <el-tabs value="热门大牛">
@@ -50,11 +52,11 @@ export { default } from './model'
             :dataSource="item"
           />
         </div>
-        <div class="btn">
+        <!-- <div class="btn">
           <a href="">
             <img src="./imgs/btn.png" alt="">
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
     <FriendLink />

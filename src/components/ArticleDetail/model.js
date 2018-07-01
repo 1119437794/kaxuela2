@@ -6,8 +6,17 @@ export default {
   },
   data () {
     return {
-      details: {},
-      lists: []
+      details: {
+        user: {
+          fudao: [],
+          course: [],
+          news: []
+        },
+        newscomment: []
+      },
+      lists: [],
+      comment: '',
+      userinfo: {}
     }
   },
   computed: {
@@ -20,21 +29,40 @@ export default {
       const { id } = this.$route.query
       await http.post('/news/collect', { article_id: +id })
     },
-    async collectTeacher ({ id, type }) {
+    async collectTeacher () {
+      const { id, is_attention: attention } = this.details.user
       await http.post('/public/attention', {
         p_user_id: id,
-        type
+        type: attention ? 2 : 1
       })
+      this.getDetails()
+    },
+    async getDetails () {
+      const { id } = this.$route.query
+      const { data: details } = await http.post('/news/details', { article_id: id })
+      this.details = details
+    },
+    gotoPage (path) {
+      this.$router.push({ path: `/${path}` })
+    },
+    async submitComment () {
+      if (!this.comment) return
+      await http.post('/news/comment', {
+        article_id: this.details.id,
+        type: 1,
+        // parent_id,
+        content: this.comment
+      })
+      this.comment = ''
+      this.getDetails()
     }
   },
   async created () {
     // 文章详情
-    // const { id } = this.$route.query
-    // const { data: details } = await http.post('/news/details', { article_id: +id })
-    // this.details = details
+    this.getDetails()
 
     // 文章列表
-    const { data: listsRes } = await http.post('/news/lists')
-    this.lists = listsRes.data
+    const { data: userinfo } = await http.post('/public/userinfo')
+    this.userinfo = userinfo
   }
 }

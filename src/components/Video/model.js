@@ -43,9 +43,17 @@ export default {
         type: isAttention ? 2 : 1
       })
       this.getDetails()
+    },
+    gotoPaly () {
+      this.$router.push({ path: `/play?id=${this.details.id}` })
     }
   },
   created () {
     this.getDetails()
+  },
+  watch: {
+    '$route.query' () {
+      this.getDetails()
+    }
   }
 }

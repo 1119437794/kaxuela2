@@ -12,7 +12,7 @@ export { default } from './model'
     <div class="oneleft">
       <img class="banner" :src="details.img" alt="">
       <div class="play">
-        <div class="play-border">
+        <div class="play-border" @click="gotoPaly">
           <Icon
             type="ios-play"
             size="40"

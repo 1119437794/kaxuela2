@@ -13,6 +13,8 @@ import Article from '@/components/Article'
 import ArticleDetail from '@/components/ArticleDetail'
 import MyCollect from '@/components/MyCollect'
 import MyCare from '@/components/MyCare'
+import Recurit from '@/components/Recurit'
+import VideoPlayer from '@/components/VideoPlayer'
 import Evaluation from '@/components/Evaluation'
 import {
   TopUp,
@@ -80,33 +82,43 @@ export default new Router({
     },
     {
       path: '/allVideo',
-      name: '全部视频',
+      name: 'allVideo',
       component: AllVideo
     },
     {
       path: '/searchDaNiu',
-      name: '找大牛',
+      name: 'searchDaNiu',
       component: SearchDaNiu
     },
     {
       path: '/article',
-      name: '文章',
+      name: 'article',
       component: Article
     },
     {
       path: '/articleDetail',
-      name: '文章详情',
+      name: 'articleDetail',
       component: ArticleDetail
     },
     {
       path: '/myCollect',
-      name: '我的收藏',
+      name: 'myCollect',
       component: MyCollect
     },
     {
       path: '/myCare',
-      name: '我的关注',
+      name: 'myCare',
       component: MyCare
+    },
+    {
+      path: '/recurit2',
+      name: 'recurit',
+      component: Recurit
+    },
+    {
+      path: '/play',
+      name: 'play',
+      component: VideoPlayer
     }
   ]
 })
