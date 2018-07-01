@@ -17,11 +17,23 @@ export default {
       activeTab: '视频'
     }
   },
-  async created () {
-    const { id } = this.$route.query
-    if (id === undefined) return this.$router.back()
-    const { data: details } = await http.post('/teacher/details', { teacher_id: id })
-    details.news = details.news.map(item => ({ puser: item }))
-    this.details = details
+  methods: {
+    async care () {
+      const { id, is_attention: attention } = this.details
+      await http.post('/public/attention', {
+        p_user_id: id,
+        type: attention ? 2 : 1
+      })
+      this.getDetails()
+    },
+    async getDetails () {
+      const { data: details } = await http.post('/teacher/details', { teacher_id: this.$route.query.id })
+      details.news = details.news.map(item => ({ puser: item }))
+      this.details = details
+    }
+  },
+  created () {
+    if (this.$route.query.id === undefined) return this.$router.back()
+    this.getDetails()
   }
 }

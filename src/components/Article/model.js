@@ -6,7 +6,24 @@ export default {
   },
   data () {
     return {
-      article: []
+      article: [],
+      authors: []
+    }
+  },
+  methods: {
+    async care ({ id, is_attention: attention }) {
+      await http.post('/public/attention', {
+        p_user_id: id,
+        type: attention ? 2 : 1
+      })
+      this.recommend()
+    },
+    async recommend () {
+      const { data: authorRes } = await http.post('/news/recommend')
+      this.authors = authorRes.data
+    },
+    gotoPartner (id) {
+      this.$router.push({path: `/partner?id=${id}`})
     }
   },
   async created () {
@@ -19,5 +36,6 @@ export default {
       news: { content, title },
       ...others
     }))
+    this.recommend()
   }
 }

@@ -7,7 +7,8 @@ export default {
   data () {
     return {
       username: '',
-      cared: []
+      cared: [],
+      userinfo: {}
     }
   },
   methods: {
@@ -28,5 +29,8 @@ export default {
   async created () {
     this.username = localStorage.username
     this.getDetails()
+
+    const { data: userinfo } = await http.post('/public/userinfo')
+    this.userinfo = userinfo
   }
 }

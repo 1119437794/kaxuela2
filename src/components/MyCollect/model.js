@@ -7,14 +7,17 @@ export default {
   data () {
     return {
       collected: [],
-      username: ''
+      username: '',
+      userinfo: {}
     }
   },
   async created () {
     this.username = localStorage.username
     // 我的收藏
     const collected = await http.post('/user/attention')
-    console.log(collected.data.data)
     this.collected = collected.data.data
+
+    const { data: userinfo } = await http.post('/public/userinfo')
+    this.userinfo = userinfo
   }
 }

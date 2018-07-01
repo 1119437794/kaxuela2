@@ -19,45 +19,23 @@ export { default } from './model'
       <div class="right">
         <div class="right-header">
           <span>推荐作者</span>
-          <span><Icon type="refresh" />换一批</span>
+          <span class="refresh" @click="recommend"><Icon type="refresh" />换一批</span>
         </div>
         <div class="authors">
-          <div class="author">
-            <img class="author-head" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+          <div class="author" v-for="(item, index) of authors" :key="index">
+            <img class="author-head" :src="item.headimg" alt="" @click="() => gotoPartner(item.id)">
             <div class="author-info">
-              <span>xiaochengu</span>
-              <span>写了33K字-8k喜欢</span>
+              <span>{{item.name}}</span>
+              <span>{{item.word_count}}</span>
             </div>
-            <div class="author-care">+关注</div>
-          </div>
-           <div class="author">
-            <img class="author-head" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <div class="author-info">
-              <span>xiaochengu</span>
-              <span>写了33K字-8k喜欢</span>
+            <div class="author-care" @click="() => care(item)">
+              {{item.is_attention ? '取消关注' : '+关注'}}
             </div>
-            <div class="author-care">+关注</div>
-          </div>
-           <div class="author">
-            <img class="author-head" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <div class="author-info">
-              <span>xiaochengu</span>
-              <span>写了33K字-8k喜欢</span>
-            </div>
-            <div class="author-care">+关注</div>
-          </div>
-           <div class="author">
-            <img class="author-head" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
-            <div class="author-info">
-              <span>xiaochengu</span>
-              <span>写了33K字-8k喜欢</span>
-            </div>
-            <div class="author-care">+关注</div>
           </div>
           <div class="btn">
-            <a href="">
+            <router-link to="/searchDaNiu">
               <img src="./imgs/btn.png" alt="">
-            </a>
+            </router-link>
           </div>
         </div>
       </div>

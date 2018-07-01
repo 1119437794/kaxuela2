@@ -9,7 +9,7 @@ export { default } from './model'
     <Header />
     <div class="main">
       <div class="one">
-        <img class="head-img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+        <img class="head-img" :src="userinfo.head_img" alt="">
         <h3 class="username">{{username}}</h3>
       </div>
       <el-tabs value="我的关注" >

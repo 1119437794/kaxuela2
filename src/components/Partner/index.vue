@@ -39,7 +39,7 @@ export { default } from './model'
               </li> -->
             </ul>
           </div>
-          <el-button class="care" type="primary" round>
+          <el-button class="care" type="primary" round @click="care">
             {{details.is_attention ? '取消关注' : '+关注'}}
           </el-button>
         </div>

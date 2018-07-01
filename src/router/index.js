@@ -15,6 +15,7 @@ import MyCollect from '@/components/MyCollect'
 import MyCare from '@/components/MyCare'
 import Recurit from '@/components/Recurit'
 import VideoPlayer from '@/components/VideoPlayer'
+import UserCenter from '@/components/UserCenter'
 import Evaluation from '@/components/Evaluation'
 import {
   TopUp,
@@ -119,6 +120,11 @@ export default new Router({
       path: '/play',
       name: 'play',
       component: VideoPlayer
+    },
+    {
+      path: '/ucenter',
+      name: 'ucenter',
+      component: UserCenter
     }
   ]
 })
