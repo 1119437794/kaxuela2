@@ -17,6 +17,9 @@ export default {
         //   el: '.swiper-pagination',
         //   clickable: true
         // },
+        // 'button-prev': {
+        //   el: '.swiper-button-prev'
+        // },
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -24,6 +27,7 @@ export default {
         on: {
           click: (e) => {
             const id = e.target.getAttribute('data-id')
+            if (id === undefined || id === null) return
             this.$router.push({path: `/partner?id=${id}`})
           }
         }
@@ -33,6 +37,7 @@ export default {
   computed: {
     superTeachers () {
       return this.teachers.slice(0, 6)
+      // return new Array(10).fill({ id: 10 })
     }
   },
   async created () {

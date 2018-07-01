@@ -23,8 +23,12 @@ export { default } from './model'
             <span class="text" :data-id="item.id" >{{item.good}}</span>
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
-          <div class="swiper-button-prev" slot="button-prev"></div>
-          <div class="swiper-button-next" slot="button-next"></div>
+          <div class="swiper-button-prev" slot="button-prev">
+            <Icon type="ios-arrow-back"></Icon>
+          </div>
+          <div class="swiper-button-next" slot="button-next">
+            <Icon type="ios-arrow-forward"></Icon>
+          </div>
       </swiper>
     </div>
     <Search />

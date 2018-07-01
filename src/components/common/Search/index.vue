@@ -32,7 +32,7 @@ export { default } from './model'
         v-for="(item ,index) of hot"
         :key="index"
       >
-        <router-link class="highlight" :to="`/video?id=${item.id}`">{{item.keyword}}</router-link>
+        <router-link class="highlight" :to="`/allVideo?keyword=${item.keyword}`">{{item.keyword}}</router-link>
       </dd>
      </dl>
     </div>

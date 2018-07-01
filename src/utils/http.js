@@ -24,7 +24,7 @@ const http = function ({ method = 'get', url, data = {} }) {
         location.href = '/login'
         throw new Error('授权过期')
       } else if ((code === '100001' || code === '10001' || code === '1001')) {
-        if (msg === 'token必须填写') {
+        if (msg === 'token必须填写' || msg === 'token过期') {
           // vue.$router.push({ path: '/login' })
           location.href = '/login'
           throw new Error('没有登录')

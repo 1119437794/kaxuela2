@@ -4,7 +4,7 @@
   align-items: center;
   height: 55px;
   width: 272px;
-  padding-left: 10px;
+  // padding-left: 10px;
   &:hover {
     box-shadow: -1px 1px 1px #eeeeee;
     border: 1px solid #eeeeee;
@@ -27,12 +27,14 @@
 }
 .unfold {
   display: flex;
+  padding-right: 10px;
 }
 .navs {
   display: flex;
+  flex-wrap: wrap;
 }
 .nav {
-  margin: 0 10px;
+  margin: 0 10px 10px 10px;
 }
 .nav a {
   color: #333333;
@@ -43,6 +45,7 @@
   position: absolute;
   top: -1px;
   left: 270px;
+  display: flex;
   width: 550px;
   padding: 10px;
   background: #fff;
@@ -72,7 +75,7 @@
   font-size: 14px;
   color: #333333;
   &:not(:last-of-type) {
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
   }
 }
 
