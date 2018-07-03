@@ -122,6 +122,22 @@ export { default } from './model'
       </div>
     </div>
   </div>
+  <Modal
+     v-model="visible"
+    title="购买课程"
+    @on-ok="onModalOk"
+    @on-cancel="onModalCancel">
+    <div class="modal-body">
+      <div class="modal-info">
+        <img :src="details.img" alt="">
+        <div class="modal-name">
+          <h3>{{details.title}}</h3>
+          <span>{{details.user.name}}</span>
+        </div>
+      </div>
+      <div class="modal-price">课程价格&nbsp;<strong>¥{{details.money}}</strong>&nbsp;学币</div>
+    </div>
+  </Modal>
   <Footer />
 </div>
 
