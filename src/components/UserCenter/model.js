@@ -6,19 +6,23 @@ export default {
   },
   data () {
     return {
-      details: []
+      userinfo: {}
     }
   },
   methods: {
+    async save () {
+      const { username, sex } = this.userinfo
+      await http.post('/user/update', {
+        username,
+        sex
+      })
+      this.$alert('保存成功', '提示', {
+        confirmButtonText: '确定'
+      })
+    }
   },
   async created () {
-    const { keyword } = this.$route.query
-    if (keyword) {
-      this.search()
-    } else {
-      // 最新视频
-      const latestRes = await http.post('/index/video', { type: 2 })
-      this.videos = latestRes.data.data
-    }
+    const { data: userinfo } = await http.post('/public/userinfo')
+    this.userinfo = userinfo
   }
 }

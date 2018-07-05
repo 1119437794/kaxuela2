@@ -38,7 +38,7 @@ export default {
       // 先检测余额
       const { data: userinfo } = await http.post('/public/userinfo')
       const { money: hadMoney } = userinfo
-      if (hadMoney > shouldPayMoney) {
+      if (hadMoney < shouldPayMoney) {
         // 提示余额不足
         this.$alert('余额不足，请充值', '提示', {
           confirmButtonText: '去充值',

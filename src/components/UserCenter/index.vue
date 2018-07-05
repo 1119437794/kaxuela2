@@ -9,10 +9,10 @@ export { default } from './model'
     <Header />
     <div class="main">
       <div class="head">
-        <img class="img" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="">
+        <img class="img" :src="userinfo.head_img" alt="">
         &emsp;
         <div class="info">
-          <h3>我的余额：2学币</h3>
+          <h3>我的余额：{{userinfo.money}}学币</h3>
           <span>(注：1学币=1元人民币)</span>
           <br />
           <br />
@@ -20,12 +20,12 @@ export { default } from './model'
         </div>
       </div>
       <div class="body">
-        <el-input class="name" v-model="input" placeholder="请输入内容"></el-input>
+        <el-input class="name" v-model="userinfo.username" placeholder="请输入内容"></el-input>
         <div class="sex">
-          <el-radio v-model="radio" label="1">男</el-radio>
-          <el-radio v-model="radio" label="2">女</el-radio>
+          <el-radio v-model="userinfo.sex" label="男">男</el-radio>
+          <el-radio v-model="userinfo.sex" label="女">女</el-radio>
         </div>
-        <el-button class="save" round>保存</el-button>
+        <el-button class="save" round @click="save">保存</el-button>
       </div>
     </div>
     <Footer />
