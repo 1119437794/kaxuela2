@@ -49,9 +49,12 @@ export default {
     this.username = localStorage.getItem('username')
     this.activeNav = location.pathname.replace('#', '')
 
-    const res = await http.post('/public/userinfo')
-
-    const userinfo = (res && res.data) || {}
-    this.userinfo = userinfo
+    if (new Date() < localStorage.expires) {
+      const res = await http.post('/public/userinfo')
+      const userinfo = (res && res.data) || {}
+      this.userinfo = userinfo
+    } else {
+      localStorage.clear()
+    }
   }
 }

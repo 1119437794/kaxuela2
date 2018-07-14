@@ -87,6 +87,7 @@ export default {
       })
       localStorage.setItem('token', res.data.token)
       localStorage.setItem('username', this.formData.user)
+      localStorage.setItem('expires', +new Date() + res.data.expires * 1000)
       this.$router.push({
         path: '/'
       })

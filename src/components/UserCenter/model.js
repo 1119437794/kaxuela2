@@ -11,9 +11,9 @@ export default {
   },
   methods: {
     async save () {
-      const { username, sex } = this.userinfo
+      const { nickname, sex } = this.userinfo
       await http.post('/user/update', {
-        username,
+        nickname,
         sex
       })
       this.$alert('保存成功', '提示', {

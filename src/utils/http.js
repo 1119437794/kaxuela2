@@ -22,19 +22,11 @@ const http = function ({ method = 'get', url, data = {} }) {
       const { code, msg } = res
       if (code === '100002' || code === '10002' || code === '1002') {
         // vue.$router.push({ path: '/login' })
-        if (location.path === '/') {
-          localStorage.clear()
-          return
-        }
         location.href = '/login'
         throw new Error('授权过期')
       } else if ((code === '100001' || code === '10001' || code === '1001')) {
         if (msg === 'token必须填写' || msg === 'token过期') {
           // vue.$router.push({ path: '/login' })
-          if (location.pathname === '/') {
-            localStorage.clear()
-            return
-          }
           location.href = '/login'
           throw new Error('没有登录')
         }

@@ -20,7 +20,7 @@ export { default } from './model'
         </div>
       </div>
       <div class="body">
-        <el-input class="name" v-model="userinfo.username" placeholder="请输入内容"></el-input>
+        <el-input class="name" v-model="userinfo.nickname" placeholder="请输入内容"></el-input>
         <div class="sex">
           <el-radio v-model="userinfo.sex" label="男">男</el-radio>
           <el-radio v-model="userinfo.sex" label="女">女</el-radio>
