@@ -1,6 +1,8 @@
 import {
   Footer
 } from '../common'
+import { BASE_URL } from '../../constants'
+
 export default {
   name: 'Register',
   data () {
@@ -44,9 +46,11 @@ export default {
     }
   },
   computed: {
+    isDaNiuRegister () {
+      return +this.$route.query.type === 2
+    },
     imgCode () {
-      const baseUrl = process.env.NODE_ENV === 'development' ? 'http://118.24.77.192' : ''
-      return `${baseUrl}/public/code?codetoken=${this.codeRendomData}&token=${window.localStorage.token}`
+      return `${BASE_URL}/public/code?codetoken=${this.codeRendomData}&token=${window.localStorage.token}`
     }
   },
   methods: {
@@ -116,6 +120,9 @@ export default {
     },
     getRandomData () {
       return Math.floor(Math.random() * 10000)
+    },
+    reloadImgCode () {
+      this.codeRendomData = Math.floor(Math.random() * 1000)
     }
   },
   components: {

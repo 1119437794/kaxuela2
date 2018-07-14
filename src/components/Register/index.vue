@@ -72,12 +72,14 @@ export { default } from './model'
             v-model="registerForm.confirmPassword"
           ></el-input>
         </el-form-item>
-        <el-form-item label="擅长" prop="goodAt">
-          <el-input
-            placeholder="请输入擅长内容"
-            v-model="registerForm.goodAt"
-          ></el-input>
-        </el-form-item>
+        <template v-if="isDaNiuRegister">
+          <el-form-item label="擅长" prop="goodAt">
+            <el-input
+              placeholder="请输入擅长内容"
+              v-model="registerForm.goodAt"
+            ></el-input>
+          </el-form-item>
+        </template>
         <el-form-item class="next">
           <div
             @click="submitForm('registerForm')"
@@ -104,7 +106,7 @@ export { default } from './model'
             placeholder="请证明你不是机器人"
             v-model="registerPhoneForm.vCode"
           >
-            <img style="height: 35px" :src="imgCode" slot="append" alt="">
+            <img style="height: 35px; cursor:pointer" :src="imgCode" slot="append" alt="" @click="reloadImgCode">
           </el-input>
         </el-form-item>
         <el-form-item prop="verificateCode">
