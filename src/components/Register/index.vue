@@ -10,10 +10,9 @@ export { default } from './model'
 <template>
   <div class="container">
     <div class="header">
-      <a class="logo" href="">
-        <img
-          src="../../../static/imgs/logo.png"/>
-      </a>
+      <router-link to="/" class="logo">
+        <img src="../../../static/imgs/logo.png"/>
+      </router-link>
     </div>
     <div class="banner" />
     <div class="content">

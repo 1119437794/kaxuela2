@@ -39,6 +39,7 @@ export default {
       if (path === 'exit') {
         await http.post('/auth/logout')
         path = '/login'
+        localStorage.clear()
       }
       this.$router.push({ path })
     }
@@ -48,7 +49,9 @@ export default {
     this.username = localStorage.getItem('username')
     this.activeNav = location.pathname.replace('#', '')
 
-    const { data: userinfo } = await http.post('/public/userinfo')
+    const res = await http.post('/public/userinfo')
+
+    const userinfo = (res && res.data) || {}
     this.userinfo = userinfo
   }
 }

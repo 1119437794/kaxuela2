@@ -16,6 +16,7 @@ export { default } from './model'
           <li>
             <a href="/order">
               <img
+                v-if="userinfo.head_img"
                 class="img"
                 :src="userinfo.head_img" alt="">
             </a>
@@ -39,6 +40,14 @@ export { default } from './model'
               </el-dropdown-menu>
             </el-dropdown>
           </li>
+          <template v-if="!username">
+            <li>
+              <router-link to="/register" class="user">注册</router-link>
+            </li>
+            <li>
+              <router-link to="/login" class="user">登录</router-link>
+            </li>
+          </template>
         </ul>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { BASE_URL } from '../../constants'
+
 export default {
   name: 'Login',
   data () {
@@ -31,13 +33,12 @@ export default {
           { required: true, message: '请输入手机验证码', trigger: 'blur' }
         ]
       },
-      codeRendomData: 1243
+      codeRendomData: Math.round(Math.random() * 1000)
     }
   },
   computed: {
     imgCode () {
-      const baseUrl = process.env.NODE_ENV === 'development' ? 'http://118.24.77.192' : ''
-      return `${baseUrl}/public/code?codetoken=${this.codeRendomData}&token=${window.localStorage.token}`
+      return `${BASE_URL}/public/code?codetoken=${this.codeRendomData}&token=${window.localStorage.token}`
     }
   },
   methods: {
@@ -105,6 +106,10 @@ export default {
 
     getRandomData () {
       return Math.floor(Math.random() * 10000)
+    },
+
+    reloadImgCode () {
+      this.codeRendomData = Math.round(Math.random() * 1000)
     }
 
   }

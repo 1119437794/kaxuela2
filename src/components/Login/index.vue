@@ -85,7 +85,7 @@ export { default } from './model'
                 placeholder="请证明你不是机器人"
                 v-model="formCode.vCode"
               >
-                <img style="height: 35px" :src="imgCode" slot="append" alt="">
+                <img style="height: 35px; cursor:pointer" :src="imgCode" slot="append" alt="" @click="reloadImgCode">
               </el-input>
             </el-form-item>
             <el-form-item prop="verificationCode">
@@ -106,7 +106,7 @@ export { default } from './model'
       <div class="divider fl code_divider"></div>
       <div class="right_area fl">
         <h5>还没有帐号:</h5>
-        <a href="/register" class="register_now">立即注册</a>
+        <router-link to="/register" class="register_now">立即注册</router-link>
         <i class="el-icon-d-arrow-right mainColor"></i>
       </div>
     </section>
