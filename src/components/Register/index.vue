@@ -103,10 +103,11 @@ export { default } from './model'
         </el-form-item>
         <el-form-item prop="vCode">
           <el-input
+            class="robot"
             placeholder="请证明你不是机器人"
             v-model="registerPhoneForm.vCode"
           >
-            <img style="height: 35px; cursor:pointer" :src="imgCode" slot="append" alt="" @click="reloadImgCode">
+            <img style="display: block; height: 38px; cursor:pointer;" :src="imgCode" slot="append" alt="" @click="reloadImgCode">
           </el-input>
         </el-form-item>
         <el-form-item prop="verificateCode">
@@ -114,7 +115,7 @@ export { default } from './model'
             placeholder="请输入验证码"
             v-model="registerPhoneForm.verificateCode"
           >
-            <el-button slot="append" @click="sendCodeToPhone">获取验证码</el-button>
+            <el-button slot="append" @click="sendCodeToPhone" :disabled="codeBtnText !== '获取验证码'">{{codeBtnText}}</el-button>
           </el-input>
         </el-form-item>
         <el-form-item class="submit">

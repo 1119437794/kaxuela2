@@ -7,8 +7,9 @@ export default {
   name: 'Register',
   data () {
     return {
-      registerType: 1,
+      registerType: 2,
       codeRendomData: 1243,
+      codeBtnText: '获取验证码',
       registerForm: {
         imageUrl: '',
         nickname: '',
@@ -90,14 +91,30 @@ export default {
       this.registerForm.imageUrl = URL.createObjectURL(file.raw)
     },
     async sendCodeToPhone () {
-      const res = await http.post('/auth/sendcode', {
-        phone: this.registerPhoneForm.phone,
-        piccode: this.registerPhoneForm.vCode,
-        codetoken: this.codeRendomData
-      })
-      if (res.status !== 1) {
-        this.codeRendomData = this.getRandomData()
-        this.$message.error(res.msg)
+      try {
+        const res = await http.post('/auth/sendcode', {
+          phone: this.registerPhoneForm.phone,
+          piccode: this.registerPhoneForm.vCode,
+          codetoken: this.codeRendomData
+        })
+        if (res.status !== 1) {
+          this.codeRendomData = this.getRandomData()
+          this.$message.error(res.msg)
+        } else {
+          // 显示倒计时
+          let i = 60
+          this.timer = setInterval(() => {
+            i--
+            if (i < 0) {
+              clearInterval(this.timer)
+              this.codeBtnText = '获取验证码'
+              return
+            }
+            this.codeBtnText = `${i}s`
+          }, 1000)
+        }
+      } catch (error) {
+        this.reloadImgCode()
       }
     },
     async created () {
@@ -124,6 +141,9 @@ export default {
     reloadImgCode () {
       this.codeRendomData = Math.floor(Math.random() * 1000)
     }
+  },
+  destroyed () {
+    this.timer && clearInterval(this.timer)
   },
   components: {
     Footer
